@@ -1,0 +1,244 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<TITLE>D2Aドキュメント</TITLE>
+</HEAD>
+<BODY>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="3" cellspacing="0">
+<TR height="100">
+<TD bgcolor="#cccccc">
+<P><FONT size="+2"><B>クラス _Sound／_SoundPool</B></FONT></P>
+</TD>
+</TR>
+</TABLE>
+</P>
+
+<P>net.satis.d2a._Sound<BR>
+net.satis.d2a._SoundPool</P>
+
+<P>SEを管理するクラスです。</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="3" cellspacing="0">
+<TR bgcolor="#cccccc">
+<TD><FONT size="+2"><B>コンストラクタ</B></FONT></TD>
+</TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>_Sound<BR>
+_SoundPool</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public <B>_Sound</B>(_Main m, int num) [_Sound クラス]<BR>
+public <B>_SoundPool</B>(_Main m, int num) [_SoundPool クラス]</P>
+<P>_Sound／_SoundPool コンストラクタです。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">m</TD><TD>_Main クラスを継承したクラスオブジェクトを指定します。</TD></TR>
+<TR><TD valign="top">num</TD><TD>管理するSEの数を指定します。</TD></TR>
+</TABLE>
+</P>
+<!--
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="3" cellspacing="0">
+<TR bgcolor="#cccccc">
+<TD><FONT size="+2"><B>メソッド</B></FONT></TD>
+</TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>create</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>create</B>(int index, int res_id)</P>
+<P>指定インデックスのサウンドデータを構築します。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">index</TD><TD>SEのインデックスを指定します。</TD></TR>
+<TR><TD valign="top">res_id</TD><TD>リソースIDを指定します。</TD></TR>
+</TABLE>
+</P>
+<!--
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>dispose</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>dispose</B>(int index)</P>
+<P>指定インデックスのサウンドデータを破棄します。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">index</TD><TD>SEのインデックスを指定します。</TD></TR>
+</TABLE>
+</P>
+<!--
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>play</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>play</B>(int index, boolean loop) [_Sound クラス]<BR>
+public void <B>play</B>(int index)</P>
+<P>指定インデックスのSEを再生します。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">index</TD><TD>SEのインデックスを指定します。</TD></TR>
+<TR><TD valign="top">loop</TD><TD>SEをループさせる場合 true、そうでない場合 false。省略時は false になります。</TD></TR>
+</TABLE>
+</P>
+<!--
+<P><B>戻り値：</B><BR>
+</P>
+-->
+<P><B>補足説明：</B><BR>
+create() メソッドにより、サウンドデータが構築されている必要があります。</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>stop</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>stop</B>(int index)</P>
+<P>指定インデックスのSEを停止します。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">index</TD><TD>SEのインデックスを指定します。</TD></TR>
+</TABLE>
+</P>
+<!--
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>setVolume</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>setVolume</B>(int volume)</P>
+<P>SEの音量を変更します。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">volume</TD><TD>音量の割合を指定します（0～100）。</TD></TR>
+</TABLE>
+</P>
+<!--
+<P><B>戻り値：</B><BR>
+</P>
+-->
+<P><B>補足説明：</B><BR>
+_Main クラスを継承したクラスの volumeSound() で指定された音量が基準となります。例えば、指定する値が 50 の場合の音量は、volumeSound() で指定された音量の半分になります。<BR>
+なお、本メソッドは、SE再生の前でのみ有効です。</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>[_Sound クラス] isPlaying</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public boolean <B>isPlaying</B>(int index)</P>
+<P>指定インデックスのSEが再生中かどうかチェックします。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">index</TD><TD>SEのインデックスを指定します。</TD></TR>
+</TABLE>
+</P>
+<P><B>戻り値：</B><BR>
+再生中の場合 true、そうでない場合 false</P>
+<!--
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>release</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>release</B>()</P>
+<P>全サウンドデータを破棄します。</P>
+<!--
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+<P><B>戻り値：</B><BR>
+</P>
+-->
+<P><B>補足説明：</B><BR>
+_Main クラスを継承したクラスの suspend() メソッド内で、本メソッドを呼び出してください。また、レジューム後は、再度 create() メソッドを実行する必要があります。</P>
+
+<!--
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B></B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P> <B></B>()</P>
+<P></P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+</BODY>
+</HTML>

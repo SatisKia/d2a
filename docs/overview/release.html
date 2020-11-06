@@ -1,0 +1,188 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<TITLE>D2Aドキュメント</TITLE>
+</HEAD>
+<BODY>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="3" cellspacing="0">
+<TR height="100">
+<TD bgcolor="#cccccc">
+<P><FONT size="+2"><B>リリース版アプリの作成</B></FONT></P>
+</TD>
+</TR>
+</TABLE>
+</P>
+
+<P>リリース版アプリを作成する手順について触れておきます。</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="6" height="6"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+2">
+<B>（1）証明書ファイルを作成する</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+
+<P>「Java Development Kit」に含まれている「keytool」コマンドを使用します。</P>
+
+<HR>
+
+<P><B>「keytool」コマンド使用法：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR>
+<TD>keytool -genkey -v -keyalg &lt;<I>署名アルゴリズム</I>&gt -keystore &lt;<I>証明書ファイル名</I>&gt; -alias &lt;<I>別名</I>&gt; -validity &lt;<I>有効日数</I>&gt;</TD>
+</TR>
+</TABLE>
+</P>
+
+<P>・<I>署名アルゴリズム</I><BR>
+署名アルゴリズムを指定します。</P>
+
+<P>・<I>証明書ファイル名</I><BR>
+書き出す証明書ファイル名を指定します。</P>
+
+<P>・<I>別名</I><BR>
+証明書の別名を指定します。大文字と小文字は区別されません。</P>
+
+<P>・<I>有効日数</I><BR>
+証明書の有効日数を指定します。推奨は 10000 です。</P>
+
+<HR>
+
+<P>実行例：<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR>
+<TD>keytool -genkey -v -keyalg <SPAN style="background-color: #cccccc">RSA</SPAN> -keystore <SPAN style="background-color: #cccccc">satis.keystore</SPAN> -alias <SPAN style="background-color: #cccccc">satiskey</SPAN> -validity <SPAN style="background-color: #cccccc">10000</SPAN></TD>
+</TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="6" height="6"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+2">
+<B>（2）apkファイルをエクスポートする</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE border="0" cellpadding="2" cellspacing="2">
+<TR><TD valign="top">（1）</TD><TD>「Eclipse」を起動します。</TD></TR>
+<TR><TD valign="top">（2）</TD><TD>Package Explorerのプロジェクトをマウス右クリックして、ポップアップメニューの「Android Tools」-「Export Unsigned Application Package...」を実行します。</TD></TR>
+<TR><TD valign="top">（3）</TD><TD>保存する場所は「C:\Android\release」など、リリース版用のフォルダを指定します。</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="6" height="6"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+2">
+<B>（3）署名する</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+
+<P>「Java Development Kit」に含まれている「jarsigner」コマンドと、「Android SDK」に含まれている「zipalign」コマンドを使用します。</P>
+
+<HR>
+
+<P><B>「jarsigner」コマンド使用法：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR>
+<TD>jarsigner -verbose -keystore &lt;<I>証明書ファイル名</I>&gt; &lt;<I>apkファイル名</I>&gt; &lt;<I>証明書の別名</I>&gt;</TD>
+</TR>
+</TABLE>
+</P>
+
+<P>・<I>証明書ファイル名</I><BR>
+（1）で作成した証明書ファイル名を指定します。</P>
+
+<P>・<I>apkファイル名</I><BR>
+（2）でエクスポートしたapkファイル名を指定します。</P>
+
+<P>・<I>証明書の別名</I><BR>
+（1）での証明書ファイル作成時に指定した別名を指定します。</P>
+
+<HR>
+
+<P><B>「zipalign」コマンド使用法：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR>
+<TD>zipalign -v &lt;<I>アライメント</I>&gt; &lt;<I>最適化前のapkファイル名</I>&gt; &lt;<I>最適化後のapkファイル名</I>&gt;</TD>
+</TR>
+</TABLE>
+</P>
+
+<P>・<I>アライメント</I><BR>
+バイト数を指定します。常に 4 を指定してください。</P>
+
+<P>・<I>最適化前のapkファイル名</I><BR>
+アライメント調整前のapkファイル名を指定します。</P>
+
+<P>・<I>最適化後のapkファイル名</I><BR>
+アライメント調整後のapkファイル名を指定します。</P>
+
+<HR>
+
+<P>下記のようなバッチファイルを作成しておくと便利です。証明書ファイル名と、証明書の別名は、自分のものに書き換えてください。</P>
+
+<P>sign.bat：<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR>
+<TD>copy %1 $$$.apk<BR>
+jarsigner -verbose -keystore <SPAN style="background-color: #cccccc">satis.keystore</SPAN> $$$.apk <SPAN style="background-color: #cccccc">satiskey</SPAN><BR>
+del out\%1<BR>
+zipalign -v 4 $$$.apk out\%1<BR>
+del $$$.apk</TD>
+</TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="6" height="6"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+2">
+<B>（4）apkファイルをインストールする</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+
+<P>「Android SDK」に含まれている「adb」コマンドを使用します。</P>
+
+<P>（1）端末IDを確認します。</P>
+
+<P>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR>
+<TD>adb devices</TD>
+</TR>
+</TABLE>
+</P>
+
+<P>（2）インストール実行します。</P>
+
+<P>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR>
+<TD>adb -s &lt;<I>端末ID</I>&gt; install &lt;<I>apkファイル名</I>&gt;</TD>
+</TR>
+</TABLE>
+</P>
+
+<P>アプリ設定データを残したまま再インストールするには、-r オプションを付けます。</P>
+
+<P>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR>
+<TD>adb -s &lt;<I>端末ID</I>&gt; install -r &lt;<I>apkファイル名</I>&gt;</TD>
+</TR>
+</TABLE>
+</P>
+
+</BODY>
+</HTML>

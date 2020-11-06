@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<TITLE>D2Aドキュメント</TITLE>
+</HEAD>
+<BODY>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="3" cellspacing="0">
+<TR height="100">
+<TD bgcolor="#cccccc">
+<P><FONT size="+2"><B>トラックボールイベントの処理</B></FONT></P>
+</TD>
+</TR>
+</TABLE>
+</P>
+
+<P>トラックボールイベントが発生すると、_Canvas／_Canvas3D クラスを継承したクラスの <B>processEvent()</B> メソッドが呼び出されます。このメソッドの中で、イベントのタイプとパラメータを識別してください。processEvent() メソッドの記述例は次のようになります。</P>
+
+<P>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR>
+<TD>public void processEvent( int type, int param ){<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;switch( type ){<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;case TRACKBALL_DOWN_EVENT:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// トラックボールが押された<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;case TRACKBALL_MOVE_EVENT:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// トラックボールが回された<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;case TRACKBALL_UP_EVENT:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// トラックボールが離された<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+}</TD>
+</TR>
+</TABLE>
+</P>
+
+<P>イベントのタイプは、<B>_Canvas.TRACKBALL_DOWN_EVENT</B>／<B>_Canvas.TRACKBALL_MOVE_EVENT</B>／<B>_Canvas.TRACKBALL_UP_EVENT</B> の3種類で、パラメータは常に 0 です。</P>
+
+<P>トラックボールイベントXY値は、_Canvas／_Canvas3D クラスの <B>getTrackballX()</B>／<B>getTrackballY()</B> メソッドで取得できます。</P>
+
+</BODY>
+</HTML>

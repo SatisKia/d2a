@@ -1,0 +1,783 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<TITLE>D2Aドキュメント</TITLE>
+</HEAD>
+<BODY>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="3" cellspacing="0">
+<TR height="100">
+<TD bgcolor="#cccccc">
+<P><FONT size="+2"><B>クラス _GLTexture／_GLTexture2</B></FONT></P>
+</TD>
+</TR>
+</TABLE>
+</P>
+
+<P>net.satis.d2a._Scalable<BR>
+└ net.satis.d2a.gl._GLTexture<BR>
+&nbsp;&nbsp;&nbsp;└ net.satis.d2a.gl._GLTexture2</P>
+
+<P>OpenGL ES のテクスチャを管理するクラスです。</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="3" cellspacing="0">
+<TR bgcolor="#cccccc">
+<TD><FONT size="+2"><B>コンストラクタ</B></FONT></TD>
+</TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>_GLTexture<BR>
+_GLTexture2</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public <B>_GLTexture</B>(GL10 gl, Resources res, int index_num, int gen_num) [_GLTexture クラス]<BR>
+public <B>_GLTexture2</B>(GL10 gl, Resources res, int index_num, int gen_num) [_GLTexture2 クラス]</P>
+<P>_GLTexture／_GLTexture2 コンストラクタです。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">gl</TD><TD>GL10 オブジェクトを指定します。</TD></TR>
+<TR><TD valign="top">res</TD><TD>Resources オブジェクトを指定します。</TD></TR>
+<TR><TD valign="top">index_num</TD><TD>テクスチャ・リソースの数を指定します。</TD></TR>
+<TR><TD valign="top">gen_num</TD><TD>OpenGL ES で管理するテクスチャの数を指定します。</TD></TR>
+</TABLE>
+</P>
+<!--
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="3" cellspacing="0">
+<TR bgcolor="#cccccc">
+<TD><FONT size="+2"><B>メソッド</B></FONT></TD>
+</TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>dispose</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>dispose</B>()</P>
+<P>全テクスチャのメモリを解放して OpenGL ES テクスチャへの割り当てを解除します。</P>
+<!--
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+<P><B>戻り値：</B><BR>
+</P>
+-->
+<P><B>補足説明：</B><BR>
+_Canvas3D クラスを継承したクラスの end3D() メソッド内で、本メソッドを呼び出してください。</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>getTextureSize</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public static int <B>getTextureSize</B>(int size)</P>
+<P>テクスチャに適したサイズに（必要ならば）拡張された値を返します。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">size</TD><TD>拡張前のサイズ</TD></TR>
+</TABLE>
+</P>
+<P><B>戻り値：</B><BR>
+テクスチャに適したサイズに拡張する必要がある場合、拡張された値。拡張する必要がない場合、size パラメータの値。</P>
+<!--
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>use</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>use</B>(int index, boolean use_trans)<BR>
+public void <B>use</B>(int index)</P>
+<P>テクスチャを構築して OpenGL ES テクスチャに割り当てます。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">index</TD><TD>テクスチャ・リソースのインデックス</TD></TR>
+<TR><TD valign="top">use_trans</TD><TD>setTransparency() メソッドを使用する場合 true を、使用しない場合 false を指定します。省略時は false になります。</TD></TR>
+</TABLE>
+</P>
+<!--
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>unuse</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>unuse</B>(int index)<BR>
+public void <B>unuse</B>()</P>
+<P>テクスチャのメモリを解放して OpenGL ES テクスチャへの割り当てを解除します。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">index</TD><TD>テクスチャ・リソースのインデックス</TD></TR>
+</TABLE>
+</P>
+<!--
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>update</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>update</B>(int index, int[] pixels, int length)<BR>
+public void <B>update</B>(int index, Bitmap bitmap)</P>
+<P>テクスチャを更新します。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">index</TD><TD>テクスチャ・リソースのインデックス</TD></TR>
+<TR><TD valign="top">pixels</TD><TD>初期化に使用するピクセルデータ</TD></TR>
+<TR><TD valign="top">length</TD><TD>ピクセルデータのデータ長</TD></TR>
+<TR><TD valign="top">bitmap</TD><TD>初期化に使用するイメージ</TD></TR>
+</TABLE>
+</P>
+<!--
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>setTransparency</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>setTransparency</B>(int index, int trans)</P>
+<P>透明度を変更します。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">index</TD><TD>テクスチャ・リソースのインデックス</TD></TR>
+<TR><TD valign="top">trans</TD><TD>α値を 0 から 255 の値で指定します。255 で不透明、0 で完全な透明になります。</TD></TR>
+</TABLE>
+</P>
+<!--
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>id</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public int <B>id</B>(int index)</P>
+<P>OpenGL ES でのテクスチャIDを取得します。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">index</TD><TD>テクスチャ・リソースのインデックス</TD></TR>
+</TABLE>
+</P>
+<P><B>戻り値：</B><BR>
+OpenGL ES でのテクスチャIDを返します。</P>
+<!--
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>width</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public int <B>width</B>(int index)</P>
+<P>テクスチャの幅を取得します。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">index</TD><TD>テクスチャ・リソースのインデックス</TD></TR>
+</TABLE>
+</P>
+<P><B>戻り値：</B><BR>
+テクスチャの幅を返します。</P>
+<!--
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>height</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public int <B>height</B>(int index)</P>
+<P>テクスチャの高さを取得します。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">index</TD><TD>テクスチャ・リソースのインデックス</TD></TR>
+</TABLE>
+</P>
+<P><B>戻り値：</B><BR>
+テクスチャの高さを返します。</P>
+<!--
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>alpha</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public boolean <B>alpha</B>(int index)</P>
+<P>テクスチャがα情報を保持しているかを確認します。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">index</TD><TD>テクスチャ・リソースのインデックス</TD></TR>
+</TABLE>
+</P>
+<P><B>戻り値：</B><BR>
+テクスチャがα情報を保持している場合 true、保持していない場合 false</P>
+<!--
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>depth</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public boolean <B>depth</B>(int index)</P>
+<P>テクスチャがデプスバッファ有効に設定されているかを確認します。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">index</TD><TD>テクスチャ・リソースのインデックス</TD></TR>
+</TABLE>
+</P>
+<P><B>戻り値：</B><BR>
+テクスチャがデプスバッファ有効に設定されている場合 true、そうでない場合 false</P>
+<!--
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>setCanvasHeight</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>setCanvasHeight</B>(int height)</P>
+<P>キャンバスの高さを通知します。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">height</TD><TD>キャンバスの高さ</TD></TR>
+</TABLE>
+</P>
+<!--
+<P><B>戻り値：</B><BR>
+</P>
+-->
+<P><B>補足説明：</B><BR>
+本メソッドの設定は、draw() メソッドでのみ参照されます。draw() メソッドを使用しない場合は、本メソッド呼び出しは必要ありません。</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>setScale</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>setScale</B>(float scale)</P>
+<P>拡大率を設定します。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">scale</TD><TD>拡大率を指定します。1.0f で等倍になります。</TD></TR>
+</TABLE>
+</P>
+<!--
+<P><B>戻り値：</B><BR>
+</P>
+-->
+<P><B>補足説明：</B><BR>
+本メソッドの設定は、draw() メソッドでのみ参照されます。draw() メソッドを使用しない場合は、本メソッド呼び出しは必要ありません。</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>scale</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public float <B>scale</B>()</P>
+<P>拡大率を取得します。</P>
+<!--
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+-->
+<P><B>戻り値：</B><BR>
+拡大率を返します。</P>
+<!--
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>scaledValue</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public int <B>scaledValue</B>(int val)</P>
+<P>整数値をスケーリングして返します。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">val</TD><TD>整数値</TD></TR>
+</TABLE>
+</P>
+<P><B>戻り値：</B><BR>
+スケーリングされた整数値</P>
+<!--
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>setFlipMode</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>setFlipMode</B>(int flipmode)</P>
+<P>テクスチャの描画時に反転または回転して描画を行うかどうかを設定します。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">flipmode</TD><TD>テクスチャの描画時の反転または回転方法を指定します。次のいずれかを指定します。<BR>
+<BR>
+<TABLE border="0" cellpadding="0" cellspacing="0">
+<TR><TD>_GLTexture.FLIP_NONE</TD><TD>　反転しないことを表します。</TD></TR>
+<TR><TD>_GLTexture.FLIP_HORIZONTAL</TD><TD>　横方向に鏡像反転することを表します。</TD></TR>
+<TR><TD>_GLTexture.FLIP_VERTICAL</TD><TD>　縦方向に鏡像反転することを表します。</TD></TR>
+<TR><TD>_GLTexture.FLIP_ROTATE</TD><TD>　縦横方向に鏡像反転（180度回転）することを表します。</TD></TR>
+</TABLE>
+</TD></TR>
+</TABLE>
+</P>
+<!--
+<P><B>戻り値：</B><BR>
+</P>
+-->
+<P><B>補足説明：</B><BR>
+本メソッドの設定は、draw() メソッドでのみ参照されます。draw() メソッドを使用しない場合は、本メソッド呼び出しは必要ありません。</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>lock</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>lock</B>(int index)</P>
+<P>テクスチャの使用を宣言します。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">index</TD><TD>使用宣言するテクスチャ・リソースのインデックスを指定します。</TD></TR>
+</TABLE>
+</P>
+<!--
+<P><B>戻り値：</B><BR>
+</P>
+-->
+<P><B>補足説明：</B><BR>
+同じテクスチャに対して draw() メソッドを連続して呼び出す場合、本メソッドでテクスチャの使用を宣言してから、draw() メソッドを連続して呼び出した後、unlockTexture() メソッドで使用宣言を解除することで、処理の高速化が図れます。</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>unlock</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>unlock</B>()</P>
+<P>テクスチャの使用宣言を解除します。</P>
+<!--
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>draw</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>draw</B>(int index, int dx, int dy)<BR>
+public void <B>draw</B>(int index, int dx, int dy, int sx, int sy, int swidth, int sheight)<BR>
+public void <B>draw</B>(int index, int dx, int dy, int dwidth, int dheight, int sx, int sy, int swidth, int sheight)</P>
+<P>テクスチャを描画します。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">index</TD><TD>描画するテクスチャ・リソースのインデックスを指定します。</TD></TR>
+<TR><TD valign="top">dx</TD><TD>描画先の矩形の左上のX座標を指定します。</TD></TR>
+<TR><TD valign="top">dy</TD><TD>描画先の矩形の左上のY座標を指定します。</TD></TR>
+<TR><TD valign="top">dwidth</TD><TD>描画先の矩形の幅を指定します。</TD></TR>
+<TR><TD valign="top">dheight</TD><TD>描画先の矩形の高さを指定します。</TD></TR>
+<TR><TD valign="top">sx</TD><TD>描画元の矩形の左上のX座標を指定します。</TD></TR>
+<TR><TD valign="top">sy</TD><TD>描画元の矩形の左上のY座標を指定します。</TD></TR>
+<TR><TD valign="top">swidth</TD><TD>描画元の矩形の幅を指定します。</TD></TR>
+<TR><TD valign="top">sheight</TD><TD>描画元の矩形の高さを指定します。</TD></TR>
+</TABLE>
+</P>
+<!--
+<P><B>戻り値：</B><BR>
+</P>
+-->
+<P><B>補足説明：</B><BR>
+lock() メソッドから unlock() メソッドの間では、index パラメータは無視されます。</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>[_GLTexture2 クラス] create2D</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>create2D</B>(int width, int height)</P>
+<P>2D描画用のテクスチャ・イメージを生成します。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">width</TD><TD>描画領域の幅を指定します。</TD></TR>
+<TR><TD valign="top">height</TD><TD>描画領域の高さを指定します。</TD></TR>
+</TABLE>
+</P>
+<!--
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>[_GLTexture2 クラス] getImage2D</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public _Image <B>getImage2D</B>()</P>
+<P>2D描画用のテクスチャ・イメージを取得します。</P>
+<!--
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+-->
+<P><B>戻り値：</B><BR>
+2D描画用のテクスチャ・イメージを返します。</P>
+<!--
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>[_GLTexture2 クラス] lock2D</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public _Graphics <B>lock2D</B>()</P>
+<P>2D描画の開始を宣言します。</P>
+<!--
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+-->
+<P><B>戻り値：</B><BR>
+2D描画を行うための _Graphics オブジェクトを返します。</P>
+<!--
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>[_GLTexture2 クラス] unlock2D</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>unlock2D</B>(boolean applyScale)</P>
+<P>2D描画の終了を宣言します。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">applyScale</TD><TD>setScale() メソッドの設定を見る場合 true、見ない場合 false</TD></TR>
+</TABLE>
+</P>
+<!--
+<P><B>戻り値：</B><BR>
+</P>
+-->
+<P><B>補足説明：</B><BR>
+本メソッドを呼ぶことで、2D描画内容がテクスチャに反映され、画面に表示されます。</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>[_GLTexture2 クラス] draw2D</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>draw2D</B>(boolean applyScale)</P>
+<P>2D描画用のテクスチャを画面に表示します。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">applyScale</TD><TD>setScale() メソッドの設定を見る場合 true、見ない場合 false</TD></TR>
+</TABLE>
+</P>
+<!--
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>resourceId</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public int <B>resourceId</B>(int index)</P>
+<P>本メソッドをオーバーライドして、テクスチャのリソースIDを返してください。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">index</TD><TD>テクスチャ・リソースのインデックスが渡されます。</TD></TR>
+</TABLE>
+</P>
+<!--
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>createBitmap</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public Bitmap <B>createBitmap</B>(Resources res, int index)</P>
+<P>リソースファイルからのテクスチャ構築でない場合は、本メソッドをオーバーライドして、Bitmap オブジェクトを返してください。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">res</TD><TD>Resources オブジェクトが渡されます。</TD></TR>
+<TR><TD valign="top">index</TD><TD>テクスチャ・リソースのインデックスが渡されます。</TD></TR>
+</TABLE>
+</P>
+<!--
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>alphaFlag</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public boolean <B>alphaFlag</B>(int index)</P>
+<P>本メソッドをオーバーライドして、テクスチャがα情報を保持している場合 true、保持していない場合 false を返してください。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">index</TD><TD>テクスチャ・リソースのインデックスが渡されます。</TD></TR>
+</TABLE>
+</P>
+<!--
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>depthFlag</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public boolean <B>depthFlag</B>(int index)</P>
+<P>本メソッドをオーバーライドして、デプスバッファを有効にする場合 true、無効にする場合 false を返してください。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">index</TD><TD>テクスチャ・リソースのインデックスが渡されます。</TD></TR>
+</TABLE>
+</P>
+<!--
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>filter</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public int <B>filter</B>(int index)</P>
+<P>本メソッドをオーバーライドして、テクスチャを拡大・縮小する場合の処理の方法を返してください。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">index</TD><TD>テクスチャ・リソースのインデックスが渡されます。</TD></TR>
+</TABLE>
+</P>
+<!--
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>wrap</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public int <B>wrap</B>(int index)</P>
+<P>本メソッドをオーバーライドして、テクスチャ座標の繰り返し方法を返してください。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">index</TD><TD>テクスチャ・リソースのインデックスが渡されます。</TD></TR>
+</TABLE>
+</P>
+<!--
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<!--
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B></B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P><B></B></P>
+<P></P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+</BODY>
+</HTML>

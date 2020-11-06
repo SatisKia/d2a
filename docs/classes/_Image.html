@@ -1,0 +1,398 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<TITLE>D2Aドキュメント</TITLE>
+</HEAD>
+<BODY>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="3" cellspacing="0">
+<TR height="100">
+<TD bgcolor="#cccccc">
+<P><FONT size="+2"><B>クラス _Image</B></FONT></P>
+</TD>
+</TR>
+</TABLE>
+</P>
+
+<P>java.lang.Object<BR>
+└ net.satis.d2a._Image</P>
+
+<P>イメージを保持するクラスです。</P>
+
+<!--
+
+<P>
+<TABLE border="0" width="100%" cellpadding="3" cellspacing="0">
+<TR bgcolor="#cccccc">
+<TD><FONT size="+2"><B>コンストラクタ</B></FONT></TD>
+</TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B></B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P><B></B>()</P>
+<P></P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="3" cellspacing="0">
+<TR bgcolor="#cccccc">
+<TD><FONT size="+2"><B>メソッド</B></FONT></TD>
+</TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>createImage</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public static _Image <B>createImage</B>(Resources res, int id)<BR>
+public static _Image <B>createImage</B>(int width, int height, boolean use_g)<BR>
+public static _Image <B>createImage</B>(int width, int height)</P>
+<P>_Image オブジェクトを生成します。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">res</TD><TD>Resources オブジェクトを指定します。</TD></TR>
+<TR><TD valign="top">id</TD><TD>リソースIDを指定します。</TD></TR>
+<TR><TD valign="top">width</TD><TD>生成するイメージの幅を指定します。</TD></TR>
+<TR><TD valign="top">height</TD><TD>生成するイメージの高さを指定します。</TD></TR>
+<TR><TD valign="top">use_g</TD><TD>_Graphics オブジェクトを構築する場合 true を、構築しない場合 false を指定します。省略時は true になります。</TD></TR>
+</TABLE>
+</P>
+<P><B>戻り値：</B><BR>
+生成された _Image オブジェクトを返します。</P>
+<!--
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>dispose</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>dispose</B>()</P>
+<P>イメージを破棄します。</P>
+<!--
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>mutable</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>mutable</B>(boolean use_g)<BR>
+public void <B>mutable</B>()</P>
+<P>イメージリソースから生成された _Image オブジェクトを変更可能にします。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">use_g</TD><TD>_Graphics オブジェクトを構築する場合 true を、構築しない場合 false を指定します。省略時は true になります。</TD></TR>
+</TABLE>
+</P>
+<!--
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>clear</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P><!--public void <B>clear</B>(int[] pixels)<BR>
+-->public void <B>clear</B>()</P>
+<P>イメージを透明色でクリアします。</P>
+<!--
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">pixels</TD><TD>作業用の、イメージの幅×高さ分の配列を指定することができます。省略するか、null を指定した場合、内部で配列が一時確保されます。</TD></TR>
+</TABLE>
+</P>
+-->
+<!--
+<P><B>戻り値：</B><BR>
+</P>
+-->
+<P><B>補足説明：</B><BR>
+変更可能なイメージにのみ有効です。</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>getBitmap</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public Bitmap <B>getBitmap</B>()</P>
+<P>Bitmap オブジェクトを取得します。</P>
+<!--
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+-->
+<P><B>戻り値：</B><BR>
+Bitmap オブジェクトを返します。</P>
+<!--
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>createBitmap</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public Bitmap <B>createBitmap</B>()</P>
+<P>Bitmap オブジェクトのコピーを作成します。</P>
+<!--
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+-->
+<P><B>戻り値：</B><BR>
+作成された Bitmap オブジェクトを返します。</P>
+<P><B>補足説明：</B><BR>
+使い終わったら Bitmap オブジェクト自身の recycle() メソッドを呼び出してメモリ解放する必要があります。</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>getWidth</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public int <B>getWidth</B>()</P>
+<P>イメージの幅を取得します。</P>
+<!--
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+-->
+<P><B>戻り値：</B><BR>
+イメージの幅を返します。</P>
+<!--
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>getHeight</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public int <B>getHeight</B>()</P>
+<P>イメージの高さを取得します。</P>
+<!--
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+-->
+<P><B>戻り値：</B><BR>
+イメージの高さを返します。</P>
+<!--
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>getGraphics</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public _Graphics <B>getGraphics</B>()</P>
+<P>イメージに描画するための _Graphics オブジェクトを取得します。</P>
+<!--
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+-->
+<P><B>戻り値：</B><BR>
+イメージに描画するための _Graphics オブジェクトを返します。</P>
+<P><B>補足説明：</B><BR>
+イメージリソースから生成された _Image オブジェクトでは、本メソッドを呼び出す前に mutable() メソッドで変更可能にしておく必要があります。</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>getPixel</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public int <B>getPixel</B>(int x, int y)</P>
+<P>点(x, y)の右下のピクセル値を取得します。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">x</TD><TD>点のX座標を指定します。</TD></TR>
+<TR><TD valign="top">y</TD><TD>点のY座標を指定します。</TD></TR>
+</TABLE>
+</P>
+<P><B>戻り値：</B><BR>
+点の右下のピクセル値を返します。</P>
+<!--
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>getPixels</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public int[] <B>getPixels</B>(int x, int y, int width, int height, int[] pixels, int off)</P>
+<P>指定する領域のピクセル値を取得します。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">x</TD><TD>領域の左上のX座標を指定します。</TD></TR>
+<TR><TD valign="top">y</TD><TD>領域の左上のY座標を指定します。</TD></TR>
+<TR><TD valign="top">width</TD><TD>領域の幅を指定します。</TD></TR>
+<TR><TD valign="top">height</TD><TD>領域の高さを指定します。</TD></TR>
+<TR><TD valign="top">pixels</TD><TD>null でない場合、ピクセル値はここに書き込まれます。</TD></TR>
+<TR><TD valign="top">off</TD><TD>配列中の結果の格納開始位置を指定します。この値は、pixels が null の場合にも適用されます。</TD></TR>
+</TABLE>
+</P>
+<P><B>戻り値：</B><BR>
+ピクセル値の配列を返します。引数 pixels が null でない場合は、pixels と同じ値です。</P>
+<P><B>補足説明：</B><BR>
+引数 pixels に null 以外を指定した場合、結果はその配列に格納されます。引数 pixels に null を指定した場合、このメソッドが自動的に配列を確保し、その配列に結果を返します。</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>setPixel</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>setPixel</B>(int x, int y, int color)</P>
+<P>点を描画します。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">x</TD><TD>点のX座標を指定します。</TD></TR>
+<TR><TD valign="top">y</TD><TD>点のY座標を指定します。</TD></TR>
+<TR><TD valign="top">color</TD><TD>描画する色を指定します。</TD></TR>
+</TABLE>
+</P>
+<!--
+<P><B>戻り値：</B><BR>
+</P>
+-->
+<P><B>補足説明：</B><BR>
+イメージリソースから生成された _Image オブジェクトでは、本メソッドを呼び出す前に mutable() メソッドで変更可能にしておく必要があります。</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>setPixels</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>setPixels</B>(int x, int y, int width, int height, int[] pixels, int off)</P>
+<P>指定する領域のピクセル値を設定します。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">x</TD><TD>領域の左上の X 座標を指定します。</TD></TR>
+<TR><TD valign="top">y</TD><TD>領域の左上の Y 座標を指定します。</TD></TR>
+<TR><TD valign="top">width</TD><TD>領域の幅を指定します。</TD></TR>
+<TR><TD valign="top">height</TD><TD>領域の高さを指定します。</TD></TR>
+<TR><TD valign="top">pixels</TD><TD>書き込むピクセル値の配列を指定します。</TD></TR>
+<TR><TD valign="top">off</TD><TD>配列中の開始位置を指定します。</TD></TR>
+</TABLE>
+</P>
+<!--
+<P><B>戻り値：</B><BR>
+</P>
+-->
+<P><B>補足説明：</B><BR>
+イメージリソースから生成された _Image オブジェクトでは、本メソッドを呼び出す前に mutable() メソッドで変更可能にしておく必要があります。</P>
+
+<!--
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B></B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P> <B></B>()</P>
+<P></P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+</BODY>
+</HTML>

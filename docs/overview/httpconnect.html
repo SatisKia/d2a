@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<TITLE>D2Aドキュメント</TITLE>
+</HEAD>
+<BODY>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="3" cellspacing="0">
+<TR height="100">
+<TD bgcolor="#cccccc">
+<P><FONT size="+2"><B>サーバーとの通信</B></FONT></P>
+</TD>
+</TR>
+</TABLE>
+</P>
+
+<P>サーバーと通信するには、_HttpRequest クラスを使用します。</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="6" height="6"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+2">
+<B>GETリクエストを送信</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+
+<P>_HttpRequest クラスの <B>get()</B> メソッドを使用します。以下にプログラム例を示します。変数 http はあらかじめ構築された _HttpRequest オブジェクト、変数 server はサーバーURLの文字列です。</P>
+
+<P>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR>
+<TD>http.get( server + "test1.php?user=guest" );</TD>
+</TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="6" height="6"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+2">
+<B>POSTリクエストを送信</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+
+<P>_HttpRequest クラスの <B>post()</B> メソッドを使用します。以下にプログラム例を示します。変数 http はあらかじめ構築された _HttpRequest オブジェクト、変数 server はサーバーURLの文字列です。</P>
+
+<P>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR>
+<TD>String[] vars = new String[2];<BR>
+vars[0] = new String( "user" );<BR>
+vars[1] = new String( "guest" );<BR>
+http.post( server + "test2.php", vars, "UTF-8" );</TD>
+</TR>
+</TABLE>
+</P>
+ 
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="6" height="6"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+2">
+<B>通信中のステータス検知</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+
+<P>通信中、_HttpRequest クラスの <B>busy()</B> メソッドの戻り値が true になります。</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="6" height="6"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+2">
+<B>サーバーからレスポンス受信</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+
+<P>_HttpRequest クラスの get()／post() メソッドで正常に通信開始し、サーバーからレスポンス受信した場合、_Main クラスを継承したクラスの <B>onHttpResponse()</B> メソッドまたは <B>onHttpError()</B> メソッドが呼び出されます。</P>
+
+</BODY>
+</HTML>

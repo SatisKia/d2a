@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<TITLE>D2Aドキュメント</TITLE>
+</HEAD>
+<BODY>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="3" cellspacing="0">
+<TR height="100">
+<TD bgcolor="#cccccc">
+<P><FONT size="+2"><B>文字列リソースの利用</B></FONT></P>
+</TD>
+</TR>
+</TABLE>
+</P>
+
+<P>文字列リソースをアプリケーションに組み込むには、「strings.xml」を書き換えます。</P>
+
+<P>Package Explorerのプロジェクトの下の「res」の中の「values」にある「strings.xml」を開きます。</P>
+
+<P>「Add...」ボタンを押し、リストから「String」を選択して「OK」ボタンを押します。</P>
+
+<P>「Name」にリソース名を入力し、「Value」にリソース文字列を入力して、「strings.xml」を保存します。</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="6" height="6"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+2">
+<B>ツール「string2xml」を使用した文字列リソースの組み込み</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+
+<P>ツール「string2xml」を使用すると、文字列リソース定義ファイルから、XML記述を作成することができます。</P>
+
+<HR>
+
+<P>まず、文字列リソース定義ファイルを用意します。記述方法は、リソース文字列とリソース名とをタブ文字で区切って記述した行を連ねます。例えば、次のようになります。文字コードはUTF-8を使用してください。</P>
+
+<P>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR>
+<TD>TestApp・app_name<BR>
+あいうえお・STRING_A<BR>
+かきくけこ・STRING_B<BR>
+さしすせそ・STRING_C</TD>
+</TR>
+</TABLE>
+※「・」は実際にはタブ文字</P>
+
+<P>なお、改行のみの行を含めることもできます。</P>
+
+<HR>
+
+<P><B>ツール「string2xml」使用法：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR>
+<TD>string2xml &lt;<I>in_file</I>&gt; &lt;<I>out_xml_file</I>&gt;</TD>
+</TR>
+</TABLE>
+</P>
+
+<P>・<I>in_file</I><BR>
+文字列リソース定義ファイルを指定します。</P>
+
+<P>・<I>out_xml_file</I><BR>
+出力するXMLファイル名を指定します。通常は、"<I>プロジェクトトップ</I>\res\values\strings.xml" を指定します。なお、指定されたXMLファイルは上書きされますので、リソース名 "app_name" の文字列リソース等、プロジェクト新規作成時に自動で組み込まれた文字列リソースは、文字列リソース定義ファイル側に記述し直しておく必要があります。</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="6" height="6"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+2">
+<B>組み込まれた文字列リソースを使用する</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+
+<P>組み込まれた文字列リソースは、</P>
+
+<P><B>・_Main クラスの getResString()</B></P>
+ 
+<P>メソッドで取得することができます。例えば次のようになります。</P>
+
+<P>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR>
+<TD>String str1 = getResString( R.string.STRING_A );</TD>
+</TR>
+</TABLE>
+</P>
+ 
+</BODY>
+</HTML>

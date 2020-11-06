@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<TITLE>D2Aドキュメント</TITLE>
+</HEAD>
+<BODY>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="3" cellspacing="0">
+<TR height="100">
+<TD bgcolor="#cccccc">
+<P><FONT size="+2"><B>クラス _HttpRequest</B></FONT></P>
+</TD>
+</TR>
+</TABLE>
+</P>
+
+<P>net.satis.d2a._HttpRequest</P>
+
+<P>サーバーと通信する機能を提供するクラスです。</P>
+
+<P>「AndroidManifest.xml」に以下の記述を追加する必要があります。</P>
+
+<P>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR>
+<TD>&lt;uses-permission android:name="android.permission.INTERNET" /&gt;</TD>
+</TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="3" cellspacing="0">
+<TR bgcolor="#cccccc">
+<TD><FONT size="+2"><B>コンストラクタ</B></FONT></TD>
+</TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>_HttpRequest</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public <B>_HttpRequest</B>(_Main m)</P>
+<P>_HttpRequest コンストラクタです。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">m</TD><TD>_Main クラスを継承したクラスオブジェクトを指定します。</TD></TR>
+</TABLE>
+</P>
+<!--
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="3" cellspacing="0">
+<TR bgcolor="#cccccc">
+<TD><FONT size="+2"><B>メソッド</B></FONT></TD>
+</TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>get</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public boolean <B>get</B>(String url)</P>
+<P>GETリクエストを送信します。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">url</TD><TD>通信先URLを指定します。</TD></TR>
+</TABLE>
+</P>
+<P><B>戻り値：</B><BR>
+正常に通信開始した場合 true、通信開始しなかった場合 false を返します。</P>
+<P><B>補足説明：</B><BR>
+本メソッドの戻り値が true の場合、_Main クラスを継承したクラスの onHttpResponse() メソッドまたは onHttpError() メソッドが呼び出されます。</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>post</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public boolean <B>post</B>(String url, String[] vars, String encoding)</P>
+<P>POSTリクエストを送信します。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">url</TD><TD>通信先URLを指定します。</TD></TR>
+<TR><TD valign="top">vars</TD><TD>送信パラメータの名前と値の組を順番に指定します。n 番目のパラメータの名前を vars[n*2] に、その値を vars[n*2+1] に指定します。</TD></TR>
+<TR><TD valign="top">encoding</TD><TD>送信パラメータのエンコードを指定します。</TD></TR>
+</TABLE>
+</P>
+<P><B>戻り値：</B><BR>
+正常に通信開始した場合 true、通信開始しなかった場合 false を返します。</P>
+<P><B>補足説明：</B><BR>
+本メソッドの戻り値が true の場合、_Main クラスを継承したクラスの onHttpResponse() メソッドまたは onHttpError() メソッドが呼び出されます。</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>busy</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public boolean <B>busy</B>()</P>
+<P>サーバーと通信中かどうかを示す値を取得します。</P>
+<!--
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+-->
+<P><B>戻り値：</B><BR>
+サーバーと通信していてビジーな場合は true、それ以外の場合は false を返します。</P>
+<!--
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<!--
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B></B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P> <B></B>()</P>
+<P></P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+</BODY>
+</HTML>

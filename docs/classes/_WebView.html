@@ -1,0 +1,679 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<TITLE>D2Aドキュメント</TITLE>
+</HEAD>
+<BODY>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="3" cellspacing="0">
+<TR height="100">
+<TD bgcolor="#cccccc">
+<P><FONT size="+2"><B>クラス _WebView</B></FONT></P>
+</TD>
+</TR>
+</TABLE>
+</P>
+
+<P>android.webkit.WebViewClient<BR>
+└ net.satis.d2a._WebView</P>
+
+<P>アプリ内にWebページを表示させる機能を提供するクラスです。</P>
+
+<P>「AndroidManifest.xml」に以下の記述を追加する必要があります。</P>
+
+<P>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR>
+<TD>&lt;uses-permission android:name="android.permission.INTERNET" /&gt;</TD>
+</TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="3" cellspacing="0">
+<TR bgcolor="#cccccc">
+<TD><FONT size="+2"><B>コンストラクタ</B></FONT></TD>
+</TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>_WebView</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public <B>_WebView</B>(_Main m, WebView view, WebChromeClient client)</P>
+<P>_WebView コンストラクタです。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">m</TD><TD>_Main クラスを継承したクラスオブジェクトを指定します。</TD></TR>
+<TR><TD valign="top">view</TD><TD>割り当てる WebView オブジェクトを指定します。</TD></TR>
+<TR><TD valign="top">client</TD><TD>割り当てる WebChromeClient オブジェクトを指定します。</TD></TR>
+</TABLE>
+</P>
+<!--
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="3" cellspacing="0">
+<TR bgcolor="#cccccc">
+<TD><FONT size="+2"><B>メソッド</B></FONT></TD>
+</TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>destroy</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>destroy</B>()</P>
+<P>終了処理を行います。</P>
+<!--
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+<P><B>戻り値：</B><BR>
+</P>
+-->
+<P><B>補足説明：</B><BR>
+_Main クラスを継承したクラスの destroy() メソッド内で、本メソッドを呼び出してください。</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>suspend</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>suspend</B>()</P>
+<P>サスペンド処理を行います。</P>
+<!--
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+<P><B>戻り値：</B><BR>
+</P>
+-->
+<P><B>補足説明：</B><BR>
+_Main クラスを継承したクラスの suspend() メソッド内で、本メソッドを呼び出してください。</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>resume</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>resume</B>()</P>
+<P>レジューム処理を行います。</P>
+<!--
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+<P><B>戻り値：</B><BR>
+</P>
+-->
+<P><B>補足説明：</B><BR>
+_Main クラスを継承したクラスの resume() メソッド内で、本メソッドを呼び出してください。</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>getView</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public WebView <B>getView</B>()</P>
+<P>割り当てられている WebView オブジェクトを取得します。</P>
+<!--
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+-->
+<P><B>戻り値：</B><BR>
+WebView オブジェクトを返します。</P>
+<!--
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>addJavascriptInterface</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>addJavascriptInterface</B>(Object object, String name)</P>
+<P>→ WebView#addJavascriptInterface</P>
+<!--
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+<P><B>戻り値：</B><BR>
+</P>
+-->
+<P><B>補足説明：</B><BR>
+Android 4.2（API level 17）以降でのみ有効です。<BR>
+@JavascriptInterface アノテーションを付加した public メソッドのみ呼び出し可となります。<BR>
+android.webkit.JavascriptInterface をインポートする必要があります。</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>setAppCacheEnabled</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>setAppCacheEnabled</B>(boolean enabled)</P>
+<P>→ WebSettings#setAppCacheEnabled</P>
+<!--
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>setBackgroundColor</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>setBackgroundColor</B>(int color)</P>
+<P>→ WebView#setBackgroundColor</P>
+<!--
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>setBuiltInZoomControls</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>setBuiltInZoomControls</B>(boolean enabled)</P>
+<P>→ WebSettings#setBuiltInZoomControls</P>
+<!--
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>setDefaultTextEncodingName</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>setDefaultTextEncodingName</B>(String encoding)</P>
+<P>→ WebSettings#setDefaultTextEncodingName</P>
+<!--
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>setJavaScriptEnabled</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>setJavaScriptEnabled</B>(boolean enabled)</P>
+<P>→ WebSettings#setJavaScriptEnabled</P>
+<!--
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>setStorageEnabled</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>setStorageEnabled</B>(boolean enabled)</P>
+<P>HTML5 ストレージを使用する／しない</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">enabled</TD><TD>HTML5 ストレージを使用する場合 true、使用しない場合 false</TD></TR>
+</TABLE>
+</P>
+<!--
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>getUserAgentString</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public String <B>getUserAgentString</B>()</P>
+<P>→ WebSettings#getUserAgentString</P>
+<!--
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>setUserAgentString</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>setUserAgentString</B>(String ua)</P>
+<P>→ WebSettings#setUserAgentString</P>
+<!--
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>clearCache</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>clearCache</B>()</P>
+<P>キャッシュをクリアします。</P>
+<!--
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>loadUrl</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>loadUrl</B>(String url)</P>
+<P>指定されたURLのページを開きます。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">url</TD><TD>ページURL</TD></TR>
+</TABLE>
+</P>
+<!--
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>loadFile</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>loadFile</B>(String file)</P>
+<P>ファイルを開きます。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">file</TD><TD>「assets」フォルダ内のファイル名</TD></TR>
+</TABLE>
+<!--
+</P>
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>callScript</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>callScript</B>(String script)</P>
+<P>JavaScriptを実行します。</P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top">script</TD><TD>スクリプト</TD></TR>
+</TABLE>
+</P>
+<!--
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>setFocus</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>setFocus</B>()</P>
+<P>割り当てられている WebView オブジェクトにフォーカスを当てます。</P>
+<!--
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>canGoBack</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public boolean <B>canGoBack</B>()</P>
+<P>前のページに戻ることができるかどうかチェックします。</P>
+<!--
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+-->
+<P><B>戻り値：</B><BR>
+前のページに戻ることができる場合 true、できない場合 false</P>
+<!--
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>getBackUrl</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public String <B>getBackUrl</B>()</P>
+<P>前のページURLを取得します。</P>
+<!--
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+-->
+<P><B>戻り値：</B><BR>
+前のページに戻ることができる場合、前のページURLを返します。戻ることができない場合 null を返します。</P>
+<!--
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>goBack</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>goBack</B>()</P>
+<P>前のページに戻ります。</P>
+<!--
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>canGoForward</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public boolean <B>canGoForward</B>()</P>
+<P>次のページに進むことができるかどうかチェックします。</P>
+<!--
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+-->
+<P><B>戻り値：</B><BR>
+次のページに進むことができる場合 true、できない場合 false</P>
+<!--
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>getForwardUrl</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public String <B>getForwardUrl</B>()</P>
+<P>次のページURLを取得します。</P>
+<!--
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+-->
+<P><B>戻り値：</B><BR>
+次のページに進むことができる場合、次のページURLを返します。進むことができない場合 null を返します。</P>
+<!--
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>goForward</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>goForward</B>()</P>
+<P>次のページに進みます。</P>
+<!--
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>zoomIn</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>zoomIn</B>()</P>
+<P>一段階拡大して表示します。</P>
+<!--
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B>zoomOut</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P>public void <B>zoomOut</B>()</P>
+<P>一段階縮小して表示します。</P>
+<!--
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+<!--
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="4" height="4"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+1">
+<B></B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+<P> <B></B>()</P>
+<P></P>
+<P><B>パラメータ：</B><BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD valign="top"></TD><TD></TD></TR>
+</TABLE>
+</P>
+<P><B>戻り値：</B><BR>
+</P>
+<P><B>補足説明：</B><BR>
+</P>
+-->
+
+</BODY>
+</HTML>

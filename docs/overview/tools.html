@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<TITLE>D2Aドキュメント</TITLE>
+</HEAD>
+<BODY>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="3" cellspacing="0">
+<TR height="100">
+<TD bgcolor="#cccccc">
+<P><FONT size="+2"><B>開発環境の準備</B></FONT></P>
+</TD>
+</TR>
+</TABLE>
+</P>
+
+<P>D2Aを使ってAndroidアプリを作るために必要な開発環境は、標準的なAndroidアプリの開発環境で構いません。</P>
+
+<P>ここでは、Windowsの場合について述べます。他のプラットフォームの場合は、一部の記述を読み替える必要があります。</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="6" height="6"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+2">
+<B>Eclipse + Android Development Tools + Android SDK</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+
+<P>「Eclipse」「Android Development Tools」「Android SDK」がセットになった開発環境です。</P>
+
+<P>http://dl.google.com/android/adt/adt-bundle-windows-x86-20140702.zip<BR>
+http://dl.google.com/android/adt/adt-bundle-windows-x86_64-20140702.zip（64bit版）</P>
+
+<P>「Java Runtime Environment」を別途インストールする必要があります。</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="6" height="6"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+2">
+<B>Java Development Kit／Java Runtime Environment</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+
+<P>●ダウンロードサイト<BR>
+<A href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank">http://www.oracle.com/technetwork/java/javase/downloads/index.html</A></P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="6" height="6"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+2">
+<B>Eclipse（参考）</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+
+<P>●ダウンロードサイト<BR>
+<A href="http://www.eclipse.org/downloads/" target="_blank">http://www.eclipse.org/downloads/</A></P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="6" height="6"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+2">
+<B>Android Development Tools（参考）</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+
+<P><B>セットアップ手順</B><BR>
+<TABLE border="0" cellpadding="2" cellspacing="2">
+<TR><TD valign="top">（1）</TD><TD>「Eclipse」を起動</TD></TR>
+<TR><TD valign="top">（2）</TD><TD>「Help」→「Install New Software...」を選択</TD></TR>
+<TR><TD valign="top">（3）</TD><TD>「Add...」ボタンを押す</TD></TR>
+<TR><TD valign="top">（4）</TD><TD>「Name」に「<B>Android plug-in</B>」、「Location」に「<B>https://dl-ssl.google.com/android/eclipse/</B>」を入力して「OK」ボタンを押す</TD></TR>
+<TR><TD valign="top">（5）</TD><TD>ツリーの「Developer Tools」にチェックを入れて「Next >」ボタンを押す</TD></TR>
+<TR><TD valign="top">（6）</TD><TD>確認画面が表示されるので「Next >」ボタンを押す</TD></TR>
+<TR><TD valign="top">（7）</TD><TD>「I accept the terms of the license agreements」を選択して「Finish」ボタンを押す</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="6" height="6"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+2">
+<B>Android SDK（参考）</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+
+<P>●ダウンロードサイト<BR>
+<A href="http://developer.android.com/sdk/index.html" target="_blank">http://developer.android.com/sdk/index.html</A></P>
+
+<P><B>セットアップ手順</B><BR>
+<TABLE border="0" cellpadding="2" cellspacing="2">
+<TR><TD valign="top">（1）</TD><TD>「android-sdk_r12-windows.zip」をダウンロード</TD></TR>
+<TR><TD valign="top">（2）</TD><TD>解凍し、フォルダを任意の場所に移動</TD></TR>
+<TR><TD valign="top">（3）</TD><TD>「Eclipse」を起動</TD></TR>
+<TR><TD valign="top">（4）</TD><TD>「Window」→「Preferences」を選択</TD></TR>
+<TR><TD valign="top">（5）</TD><TD>ツリーの「Android」を選択</TD></TR>
+<TR><TD valign="top">（6）</TD><TD>「SDK Location」に Android SDK のフォルダを入力して「OK」ボタンを押す</TD></TR>
+<TR><TD valign="top">（7）</TD><TD>「Window」→「Android SDK and AVD Manager」を選択</TD></TR>
+<TR><TD valign="top">（8）</TD><TD>リストの「Available packages」を選択し、ツリーにチェックを入れ、「Install Selected」ボタンを押す</TD></TR>
+<TR><TD valign="top">（9）</TD><TD>「Accept All」を選択して「Install」ボタンを押す</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="6" height="6"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+2">
+<B>Android Virtual Device</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+
+<P><B>セットアップ手順</B><BR>
+<TABLE border="0" cellpadding="2" cellspacing="2">
+<TR><TD valign="top">（1）</TD><TD>「Eclipse」を起動</TD></TR>
+<TR><TD valign="top">（2）</TD><TD>「Window」→「Android SDK and AVD Manager」を選択</TD></TR>
+<TR><TD valign="top">（3）</TD><TD>リストの「Virtual devices」を選択し、「New...」ボタンを押す</TD></TR>
+<TR><TD valign="top">（4）</TD><TD>端末の設定を入力し、「Create AVD」ボタンを押す</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="6" height="6"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+2">
+<B>Android端末のデバッグ用設定</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+
+<P><B>手順（Android 2.x 等）</B><BR>
+<TABLE border="0" cellpadding="2" cellspacing="2">
+<TR><TD valign="top">（1）</TD><TD>Android端末の「MENU」ボタンを押す</TD></TR>
+<TR><TD valign="top">（2）</TD><TD>「端末設定」→「アプリケーション」→「開発」の「USBデバッグ」にチェックを入れる</TD></TR>
+<TR><TD valign="top">（3）</TD><TD>USB接続モードを「カードリーダーモード」にする</TD></TR>
+</TABLE>
+</P>
+
+<P><B>手順（Android 4.x 以降）</B><BR>
+<TABLE border="0" cellpadding="2" cellspacing="2">
+<TR><TD valign="top">（1）</TD><TD>「設定」→「端末情報」の「ビルド番号」の欄を複数回タップして、開発者向けオプションを使用可能にする</TD></TR>
+<TR><TD valign="top">（2）</TD><TD>「設定」→「その他の設定」→「開発者向けオプション」の「USBデバッグ」にチェックを入れる</TD></TR>
+<TR><TD valign="top">（3）</TD><TD>USB接続モードを「PTPモード」にする</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
+<TR><TD bgcolor="#888888" width="6" height="6"></TD><TD bgcolor="#888888"></TD></TR>
+<TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+2">
+<B>パソコンとAndroid端末のUSB接続</B>
+</FONT></TD></TR>
+</TABLE>
+</P>
+
+<P><B>手順</B><BR>
+<TABLE border="0" cellpadding="2" cellspacing="2">
+<TR><TD valign="top">（1）</TD><TD>パソコンにAndroid端末をUSBで接続すると、新しいハードウェアの検出ウィザードが表示されるが、キャンセルする</TD></TR>
+<TR><TD valign="top">（2）</TD><TD>デバイスマネージャを開き、「その他のデバイス」の下の「Android ADB Interface」をダブルクリックし、「詳細」タブでの「ハードウェア ID」をメモしておく</TD></TR>
+<TR><TD valign="top">（3）</TD><TD>Android SDK のフォルダの下に「extras\google\usb_driver」フォルダがあり、その中の「android_winusb.inf」をテキストエディタで開き、<BR>
+[Google.NTx86]<BR>
+の所に記述を追加する<BR>
+<BR>
+記述例：<BR>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD>%CompositeAdbInterface% = USB_Install, <SPAN style="background-color: #cccccc">USB\Vid_04dd&amp;Pid_93b4&amp;Rev_0100&amp;MI_01</SPAN></TD></TR>
+</TABLE>
+<BR>
+※ <SPAN style="background-color: #cccccc">　　　</SPAN> メモしておいたハードウェアID<BR>
+<BR></TD></TR>
+<TR><TD valign="top">（4）</TD><TD>ドライバの更新を行う</TD></TR>
+<TR><TD valign="top">（5）</TD><TD>パソコンの再起動を要求してきた場合、再起動する</TD></TR>
+<TR><TD valign="top">（6）</TD><TD>Android端末をUSBで接続すると、デバイスマネージャで「Android Phone」の下に「Android Composite ADB Interface」が表示される</TD></TR>
+</TABLE>
+</P>
+
+</BODY>
+</HTML>
