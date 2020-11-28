@@ -1,5 +1,7 @@
 # D2A
 
+[English version is here](./README_E.md)
+
 「D2A」は、DoJa風のアプリの流れ、イベント処理、グラフィック処理でAndroidアプリを作成できるフレームワークです。
 
 ## coreフォルダ
