@@ -5,15 +5,15 @@ import java.util.*;
 import net.satis.d2a.*;
 
 /**
- * ƒƒCƒ“
+ * ãƒ¡ã‚¤ãƒ³
  */
 public class Speeder extends _Main {
 	public int orientation(){ return ORIENTATION_PORTRAIT; }
 
-	// ƒS[ƒ‹‚Ü‚Å‚Ì‹——£
+	// ã‚´ãƒ¼ãƒ«ã¾ã§ã®è·é›¢
 	public static final int DISTANCE				= 1000000;
 
-	// ƒAƒvƒŠ‚Ìó‘Ô
+	// ã‚¢ãƒ—ãƒªã®çŠ¶æ…‹
 	public static final int STATE_LAUNCH			= -1;
 	public static final int STATE_TITLE				= 0;
 	public static final int STATE_TITLE_LOADING		= 1;
@@ -24,16 +24,16 @@ public class Speeder extends _Main {
 	public static final int STATE_CLEAR				= 7;
 	public static final int STATE_STOP				= 8;
 
-	// 1ƒtƒŒ[ƒ€‚ÌŠÔ(ƒ~ƒŠ•b)
+	// 1ãƒ•ãƒ¬ãƒ¼ãƒ ã®æ™‚é–“(ãƒŸãƒªç§’)
 	public static final int FRAME_TIME				= 65;
 
-	// ‘Ò‚¿ƒtƒŒ[ƒ€”
+	// å¾…ã¡ãƒ•ãƒ¬ãƒ¼ãƒ æ•°
 	public static final int WAIT_BOOST				= 15;
 	public static final int WAIT_1					= 30;
 	public static final int WAIT_2					= 60;
 	public static final int WAIT_3					= 90;
 
-	// ‰æ‘œ‚Ìí—Ş
+	// ç”»åƒã®ç¨®é¡
 	public static final int IMAGE_BACK				= 0;
 	public static final int IMAGE_BAR				= 1;
 	public static final int IMAGE_FORE1				= 2;
@@ -54,9 +54,9 @@ public class Speeder extends _Main {
 	public static final int IMAGE_RAY				= 17;
 	public static final int IMAGE_COM				= 18;
 	public static final int IMAGE_RAX				= 19;
-	public static final int IMAGE_NUM				= 20;	// ‰æ‘œ‚Ì”
+	public static final int IMAGE_NUM				= 20;	// ç”»åƒã®æ•°
 
-	// ƒ^ƒCƒgƒ‹‰æ–ÊƒeƒLƒXƒgî•ñ
+	// ã‚¿ã‚¤ãƒˆãƒ«ç”»é¢ãƒ†ã‚­ã‚¹ãƒˆæƒ…å ±
 	public static final int TEXT_NEUTRAL_X			= 0;
 	public static final int TEXT_NEUTRAL_Y			= 12;
 	public static final int TEXT_NEUTRAL_W			= 74;
@@ -198,7 +198,7 @@ public class Speeder extends _Main {
 	public static final int TEXT_BUTTON_W			= 66;
 	public static final int TEXT_BUTTON_H			= 10;
 
-	// ƒXƒe[ƒ^ƒXƒeƒLƒXƒgî•ñ
+	// ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ãƒ†ã‚­ã‚¹ãƒˆæƒ…å ±
 	public static final int TEXT_READY_X			= 0;
 	public static final int TEXT_READY_Y			= 74;
 	public static final int TEXT_READY_W			= 101;
@@ -248,14 +248,14 @@ public class Speeder extends _Main {
 	public static final int TEXT_AUTOSHIELD_W		= 109;
 	public static final int TEXT_AUTOSHIELD_H		= 11;
 
-	// ƒXƒs[ƒ_[‚Ìí—Ş
+	// ã‚¹ãƒ”ãƒ¼ãƒ€ãƒ¼ã®ç¨®é¡
 	public static final int SPEEDER1				= 0;
 	public static final int SPEEDER2				= 1;
 	public static final int SPEEDER3				= 2;
 	public static final int SPEEDER4				= 3;
 	public static final int SPEEDER5				= 4;
 
-	// ©“®ˆÚ“®‚Ìí—Ş
+	// è‡ªå‹•ç§»å‹•ã®ç¨®é¡
 	public static final int AUTO_INERTIA			= 0;
 	public static final int AUTO_NEUTRAL			= 1;
 	public static final int AUTO_MOVED_INERTIA		= 2;
@@ -289,7 +289,7 @@ public class Speeder extends _Main {
 	public static Wave wave;
 	public static MySpeeder[] speeder;
 
-	// ‚æ‚­g‚¤F
+	// ã‚ˆãä½¿ã†è‰²
 	public static final int COLOR_C = _Graphics.getColorOfRGB(   0, 255, 255 );
 	public static final int COLOR_M = _Graphics.getColorOfRGB( 255,   0, 255 );
 	public static final int COLOR_Y = _Graphics.getColorOfRGB( 255, 255,   0 );
@@ -308,16 +308,16 @@ public class Speeder extends _Main {
 	public static final int[] SPEEDER3_X_M = { 315, 298, 281, 264, 247, 229, 211, 192, 172, 151, 130, 108, 86, 63, 40, 17 };
 	public static final int[] SPEEDER3_W = { 17, 17, 17, 17, 17, 18, 18, 19, 20, 21, 21, 22, 22, 23, 23, 23 };
 
-	int load_cnt;				// ƒ[ƒhÏ‚İƒf[ƒ^”
-	int load_num;				// ƒ[ƒh”
+	int load_cnt;				// ãƒ­ãƒ¼ãƒ‰æ¸ˆã¿ãƒ‡ãƒ¼ã‚¿æ•°
+	int load_num;				// ãƒ­ãƒ¼ãƒ‰æ•°
 
-	int state = STATE_LAUNCH;	// ƒAƒvƒŠ‚Ìó‘Ô
-	int help;					// ƒwƒ‹ƒv‚Ìí—Ş
-	int help_back = -1;			// ƒwƒ‹ƒv”wŒi‚Ìí—Ş
-	int _elapse;				// Œo‰ßŠÔ
-	int _elapse_p;				// ƒ|[ƒY’†‚ÌŒo‰ßŠÔ
-	int _elapse_s;				// ƒV[ƒ‹ƒhØ‚è‘Ö‚¦‘¬“x
-	boolean pause = false;		// ƒ|[ƒY’†‚©‚Ç‚¤‚©
+	int state = STATE_LAUNCH;	// ã‚¢ãƒ—ãƒªã®çŠ¶æ…‹
+	int help;					// ãƒ˜ãƒ«ãƒ—ã®ç¨®é¡
+	int help_back = -1;			// ãƒ˜ãƒ«ãƒ—èƒŒæ™¯ã®ç¨®é¡
+	int _elapse;				// çµŒéæ™‚é–“
+	int _elapse_p;				// ãƒãƒ¼ã‚ºä¸­ã®çµŒéæ™‚é–“
+	int _elapse_s;				// ã‚·ãƒ¼ãƒ«ãƒ‰åˆ‡ã‚Šæ›¿ãˆé€Ÿåº¦
+	boolean pause = false;		// ãƒãƒ¼ã‚ºä¸­ã‹ã©ã†ã‹
 	int[] shield_lag;
 	int shield_index;
 	int[] shield_wait;
@@ -327,31 +327,31 @@ public class Speeder extends _Main {
 
 	int height;
 
-	boolean sensor_f;			// ƒ‚[ƒVƒ‡ƒ“ƒZƒ“ƒT[‚ğg—p‚·‚é‚©‚Ç‚¤‚©
-	boolean neutral;			// ƒL[‰ğ•ú‚Åƒjƒ…[ƒgƒ‰ƒ‹‚É‚·‚é‚©‚Ç‚¤‚©
-	int level;					// ƒŒƒxƒ‹
-	int player;					// g—pƒLƒƒƒ‰ƒNƒ^
+	boolean sensor_f;			// ãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³ã‚»ãƒ³ã‚µãƒ¼ã‚’ä½¿ç”¨ã™ã‚‹ã‹ã©ã†ã‹
+	boolean neutral;			// ã‚­ãƒ¼è§£æ”¾ã§ãƒ‹ãƒ¥ãƒ¼ãƒˆãƒ©ãƒ«ã«ã™ã‚‹ã‹ã©ã†ã‹
+	int level;					// ãƒ¬ãƒ™ãƒ«
+	int player;					// ä½¿ç”¨ã‚­ãƒ£ãƒ©ã‚¯ã‚¿
 
-	boolean first;				// ‰’§í‚©‚Ç‚¤‚©
+	boolean first;				// åˆæŒ‘æˆ¦ã‹ã©ã†ã‹
 
-	int[] time;					// ¡‰ñ‚Ìƒ^ƒCƒ€
-	int[][] best_time;			// ƒxƒXƒgƒ^ƒCƒ€
-	int[][] win;				// ‚PˆÊ‚É‚È‚Á‚½‰ñ”
-	int ranking;				// ‡ˆÊ
-	boolean new_time;			// ‹L˜^XV‚©‚Ç‚¤‚©
+	int[] time;					// ä»Šå›ã®ã‚¿ã‚¤ãƒ 
+	int[][] best_time;			// ãƒ™ã‚¹ãƒˆã‚¿ã‚¤ãƒ 
+	int[][] win;				// ï¼‘ä½ã«ãªã£ãŸå›æ•°
+	int ranking;				// é †ä½
+	boolean new_time;			// è¨˜éŒ²æ›´æ–°ã‹ã©ã†ã‹
 
-	int best_distance;			// ƒxƒXƒg‘–s‹——£
+	int best_distance;			// ãƒ™ã‚¹ãƒˆèµ°è¡Œè·é›¢
 	int old_distance;			//
-	boolean new_distance;		// ‹L˜^XV‚©‚Ç‚¤‚©
+	boolean new_distance;		// è¨˜éŒ²æ›´æ–°ã‹ã©ã†ã‹
 
-	int _elapse_l;				// Œv‘ªƒ|ƒCƒ“ƒg’Ê‰ß‚ÌŠÔ
-	int lap;					// ƒ‰ƒbƒv
-	int lap_time;				// ƒ‰ƒbƒvƒ^ƒCƒ€‚Ì·
-	boolean dsp_lap;			// ƒ‰ƒbƒvƒ^ƒCƒ€‚Ì·‚ğ•\¦‚·‚é‚©‚Ç‚¤‚©
-	boolean finish;				// ƒtƒBƒjƒbƒVƒ…ƒ‰ƒCƒ“‚©‚Ç‚¤‚©
+	int _elapse_l;				// è¨ˆæ¸¬ãƒã‚¤ãƒ³ãƒˆé€šéæ™‚ã®æ™‚é–“
+	int lap;					// ãƒ©ãƒƒãƒ—
+	int lap_time;				// ãƒ©ãƒƒãƒ—ã‚¿ã‚¤ãƒ ã®å·®
+	boolean dsp_lap;			// ãƒ©ãƒƒãƒ—ã‚¿ã‚¤ãƒ ã®å·®ã‚’è¡¨ç¤ºã™ã‚‹ã‹ã©ã†ã‹
+	boolean finish;				// ãƒ•ã‚£ãƒ‹ãƒƒã‚·ãƒ¥ãƒ©ã‚¤ãƒ³ã‹ã©ã†ã‹
 
-	boolean boost;				// ƒu[ƒXƒg‰Â”\‚©‚Ç‚¤‚©
-	int _elapse_b;				// ƒu[ƒXƒgg—p‚ÌŠÔ
+	boolean boost;				// ãƒ–ãƒ¼ã‚¹ãƒˆå¯èƒ½ã‹ã©ã†ã‹
+	int _elapse_b;				// ãƒ–ãƒ¼ã‚¹ãƒˆä½¿ç”¨æ™‚ã®æ™‚é–“
 
 	int[] old_y;
 	int[] new_y;
@@ -363,7 +363,7 @@ public class Speeder extends _Main {
 
 	_Sensor sensor;
 
-	// ƒL[“ü—Í‚Æ•`‰æ‚Æ‚Ì”r‘¼ˆ——p
+	// ã‚­ãƒ¼å…¥åŠ›ã¨æç”»ã¨ã®æ’ä»–å‡¦ç†ç”¨
 	boolean _lock_state = false;
 	boolean _wait_state = false;
 	public void lock_state(){
@@ -387,18 +387,18 @@ public class Speeder extends _Main {
 		}
 	}
 
-	// ƒL[“ü—Íˆ—‚ÌƒRƒ“ƒtƒŠƒNƒg—}§—p
+	// ã‚­ãƒ¼å…¥åŠ›æ™‚å‡¦ç†ã®ã‚³ãƒ³ãƒ•ãƒªã‚¯ãƒˆæŠ‘åˆ¶ç”¨
 	boolean processingEvent = false;
 
 	boolean terminate_f = false;
 
 	/**
-	 * İ’è‚Ì“Ç‚İ‚İ
+	 * è¨­å®šã®èª­ã¿è¾¼ã¿
 	 */
 	public void load_config(){
 		int i, j;
 
-		// ƒfƒtƒHƒ‹ƒg’l
+		// ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆå€¤
 		sensor_f      = true;
 		neutral       = true;
 		level         = 0;
@@ -418,10 +418,10 @@ public class Speeder extends _Main {
 		}
 		best_distance = 0;
 
-		// Šù‚Éƒf[ƒ^‚ª‚ ‚é‚©‚Ç‚¤‚©ƒ`ƒFƒbƒN‚·‚é
+		// æ—¢ã«ãƒ‡ãƒ¼ã‚¿ãŒã‚ã‚‹ã‹ã©ã†ã‹ãƒã‚§ãƒƒã‚¯ã™ã‚‹
 		_Preference pref = new _Preference( this, "config" );
 		if( Integer.parseInt( pref.getParameter( "save", "0" ) ) == 1 ){
-			// ƒf[ƒ^‚ª‚ ‚é‚Ì‚Å“Ç‚İo‚·
+			// ãƒ‡ãƒ¼ã‚¿ãŒã‚ã‚‹ã®ã§èª­ã¿å‡ºã™
 			pref.beginRead();
 			String str = new String( "" );
 			str = pref.read( "" ); if( str.length() > 0 ) neutral = (Integer.parseInt( str ) == 1) ? true : false;
@@ -453,7 +453,7 @@ public class Speeder extends _Main {
 	}
 
 	/**
-	 * İ’è‚Ì‘‚«o‚µ
+	 * è¨­å®šã®æ›¸ãå‡ºã—
 	 */
 	public void save_config(){
 		int i, j;
@@ -488,7 +488,7 @@ public class Speeder extends _Main {
 	}
 
 	/**
-	 * ƒCƒ[ƒW“Ç‚İ‚İ
+	 * ã‚¤ãƒ¡ãƒ¼ã‚¸èª­ã¿è¾¼ã¿
 	 */
 	public void create_image( int id ){
 		if( main_img[id] == null ){
@@ -539,10 +539,10 @@ public class Speeder extends _Main {
 		return main_img[id];
 	}
 
-	// Œo‰ßŠÔ‚ğŠm”F‚·‚é
+	// çµŒéæ™‚é–“ã‚’ç¢ºèªã™ã‚‹
 	public int elapse(){ return pause ? _elapse_p : _elapse; }
 
-	// ‚¨‚Ü‚¯ƒ‚[ƒh‚ªƒvƒŒƒC‚Å‚«‚é‚©Šm”F‚·‚é
+	// ãŠã¾ã‘ãƒ¢ãƒ¼ãƒ‰ãŒãƒ—ãƒ¬ã‚¤ã§ãã‚‹ã‹ç¢ºèªã™ã‚‹
 	public boolean omake1(){
 		int i;
 		for( i = 0; i < 6; i++ ){
@@ -575,7 +575,7 @@ public class Speeder extends _Main {
 	public int index_w(){ return (level == 7) ? 2 : level; }
 
 	/**
-	 * ƒAƒvƒŠ‚Ìó‘Ô‚ğ•ÏX‚·‚é
+	 * ã‚¢ãƒ—ãƒªã®çŠ¶æ…‹ã‚’å¤‰æ›´ã™ã‚‹
 	 */
 	public void set_state( int new_state ){
 		int old_state = state;
@@ -743,7 +743,7 @@ public class Speeder extends _Main {
 	}
 
 	/**
-	 * •`‰æ‚Ég—p‚·‚éF‚ğİ’è
+	 * æç”»ã«ä½¿ç”¨ã™ã‚‹è‰²ã‚’è¨­å®š
 	 */
 	public void setCMYColor( int col ){
 		switch( col ){
@@ -848,7 +848,7 @@ public class Speeder extends _Main {
 	}
 
 	/**
-	 * ƒLƒƒƒ“ƒoƒX
+	 * ã‚­ãƒ£ãƒ³ãƒã‚¹
 	 */
 	class MainCanvas extends _Canvas {
 		public int frameTime(){ return FRAME_TIME; }
@@ -872,7 +872,7 @@ public class Speeder extends _Main {
 		}
 
 		/**
-		 * •¶š—ñƒZƒ“ƒ^ƒŠƒ“ƒO•`‰æ
+		 * æ–‡å­—åˆ—ã‚»ãƒ³ã‚¿ãƒªãƒ³ã‚°æç”»
 		 */
 		private void centerDrawString( String str, int y ){
 			int x;
@@ -884,7 +884,7 @@ public class Speeder extends _Main {
 		}
 
 		/**
-		 * ƒXƒe[ƒ^ƒX•`‰æ
+		 * ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹æç”»
 		 */
 		private void drawStatus( boolean ready ){
 			int i, x, y;
@@ -978,12 +978,12 @@ public class Speeder extends _Main {
 //				g.setColor( COLOR_K );
 //				g.fillRect( 0, 0, 240, height );
 //				setCMYColor( _elapse % 3 );
-//				centerDrawString( "‹N“®’†...", 120 );
+//				centerDrawString( "èµ·å‹•ä¸­...", 120 );
 //				g.unlock();
 //				break;
 			case STATE_TITLE:
 			case STATE_TITLE_LOADING:
-				// •`‰æ
+				// æç”»
 				g.lock();
 				{
 					int x;
@@ -1136,7 +1136,7 @@ public class Speeder extends _Main {
 				break;
 			case STATE_SELECT:
 			case STATE_SELECT_LOADING:
-				// •`‰æ
+				// æç”»
 				g.lock();
 				{
 					int i;
@@ -1159,7 +1159,7 @@ public class Speeder extends _Main {
 //					drawImage( g, use_image( IMAGE_TITLE ), (240 - TEXT_SELECTCHAR_W) / 2, 15, TEXT_SELECTCHAR_X, TEXT_SELECTCHAR_Y, TEXT_SELECTCHAR_W, TEXT_SELECTCHAR_H );
 					g.setColor( COLOR_Y );
 					g.setFontSize( 16 );
-					centerDrawString( "ƒLƒƒƒ‰ƒNƒ^‚ğ‘I‚ñ‚Å‚Ë", 20 );
+					centerDrawString( "ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ã‚’é¸ã‚“ã§ã­", 20 );
 
 					drawImage( g, use_image( IMAGE_TITLE ), 140 - TEXT_ACCELERATION_W, 140, TEXT_ACCELERATION_X, TEXT_ACCELERATION_Y, TEXT_ACCELERATION_W, TEXT_ACCELERATION_H );
 					drawImage( g, use_image( IMAGE_TITLE ), 140 - TEXT_SLOWDOWN_W, 160, TEXT_SLOWDOWN_X, TEXT_SLOWDOWN_Y, TEXT_SLOWDOWN_W, TEXT_SLOWDOWN_H );
@@ -1274,7 +1274,7 @@ public class Speeder extends _Main {
 
 				break;
 			case STATE_READY:
-				// •`‰æ
+				// æç”»
 				g.lock();
 				stage.draw( true );
 				wave.draw();
@@ -1295,7 +1295,7 @@ public class Speeder extends _Main {
 				drawStatus( true );
 				g.unlock();
 
-				// ˆê’èŠÔ‰ß‚¬‚½‚çƒQ[ƒ€ŠJn
+				// ä¸€å®šæ™‚é–“éããŸã‚‰ã‚²ãƒ¼ãƒ é–‹å§‹
 				if( _elapse > WAIT_2 ){
 					set_state( STATE_PLAY );
 				}
@@ -1307,13 +1307,13 @@ public class Speeder extends _Main {
 
 					time[0]++;
 
-					// XV‘O‚ÌÀ•W‚ğ•Û
+					// æ›´æ–°å‰ã®åº§æ¨™ã‚’ä¿æŒ
 					if( (level < 2) || (level == 7) ){
 						old_y[0] = speeder[1].dsp_y();
 						old_y[1] = speeder[2].dsp_y();
 					}
 
-					// XV
+					// æ›´æ–°
 					stage.update();
 					wave.update();
 
@@ -1347,7 +1347,7 @@ public class Speeder extends _Main {
 						}
 					}
 
-					// ƒXƒs[ƒ_[‚ÌˆÚ“®
+					// ã‚¹ãƒ”ãƒ¼ãƒ€ãƒ¼ã®ç§»å‹•
 					if( level == 4 ){
 						switch( speeder[0].auto() ){
 						case AUTO_MOVED_INERTIA: speeder[0].auto( AUTO_INERTIA ); break;
@@ -1374,7 +1374,7 @@ public class Speeder extends _Main {
 					}
 				}
 
-				// •`‰æ
+				// æç”»
 				g.lock();
 				stage.draw( false );
 				{
@@ -1409,12 +1409,12 @@ public class Speeder extends _Main {
 
 				if( level != 6 ){
 					if( finish ){
-						// ƒXƒe[ƒWƒNƒŠƒA
+						// ã‚¹ãƒ†ãƒ¼ã‚¸ã‚¯ãƒªã‚¢
 						set_state( STATE_CLEAR );
 					}
 				} else {
 					if( speeder[0].speed() == 0 ){
-						// ƒQ[ƒ€I—¹
+						// ã‚²ãƒ¼ãƒ çµ‚äº†
 						set_state( STATE_STOP );
 					}
 				}
@@ -1424,13 +1424,13 @@ public class Speeder extends _Main {
 				{
 					int i;
 
-					// XV‘O‚ÌÀ•W‚ğ•Û
+					// æ›´æ–°å‰ã®åº§æ¨™ã‚’ä¿æŒ
 					if( (level < 2) || (level == 7) ){
 						old_y[0] = speeder[1].dsp_y();
 						old_y[1] = speeder[2].dsp_y();
 					}
 
-					// XV
+					// æ›´æ–°
 					stage.update();
 					wave.update();
 
@@ -1445,7 +1445,7 @@ public class Speeder extends _Main {
 						}
 					}
 
-					// ƒXƒs[ƒ_[‚ÌˆÚ“®
+					// ã‚¹ãƒ”ãƒ¼ãƒ€ãƒ¼ã®ç§»å‹•
 					speeder[0].inertia( true );
 					if( (level < 2) || (level == 7) ){
 						speeder[1].inertia( true );
@@ -1453,7 +1453,7 @@ public class Speeder extends _Main {
 					}
 				}
 
-				// •`‰æ
+				// æç”»
 				g.lock();
 				stage.draw( false );
 				wave.draw();
@@ -1490,17 +1490,17 @@ public class Speeder extends _Main {
 				drawStatus( false );
 				g.unlock();
 
-				// ˆê’èŠÔ‰ß‚¬‚½‚çƒ^ƒCƒgƒ‹‰æ–Ê‚Ö
+				// ä¸€å®šæ™‚é–“éããŸã‚‰ã‚¿ã‚¤ãƒˆãƒ«ç”»é¢ã¸
 				if( _elapse > WAIT_3 ){
 					set_state( STATE_TITLE );
 				}
 
 				break;
 			case STATE_STOP:
-				// ƒXƒs[ƒ_[‚ÌˆÚ“®
+				// ã‚¹ãƒ”ãƒ¼ãƒ€ãƒ¼ã®ç§»å‹•
 				speeder[0].inertia( true );
 
-				// •`‰æ
+				// æç”»
 				g.lock();
 				stage.draw( false );
 				wave.draw();
@@ -1517,7 +1517,7 @@ public class Speeder extends _Main {
 				drawStatus( false );
 				g.unlock();
 
-				// ˆê’èŠÔ‰ß‚¬‚½‚çƒ^ƒCƒgƒ‹‰æ–Ê‚Ö
+				// ä¸€å®šæ™‚é–“éããŸã‚‰ã‚¿ã‚¤ãƒˆãƒ«ç”»é¢ã¸
 				if( _elapse > WAIT_3 ){
 					set_state( STATE_TITLE );
 				}
@@ -1550,14 +1550,14 @@ public class Speeder extends _Main {
 			case STATE_SELECT_LOADING:
 				break;
 			case STATE_TITLE:
-				drawScreenButton( _g, MYLAYOUT_BACK, "I—¹" );
+				drawScreenButton( _g, MYLAYOUT_BACK, "çµ‚äº†" );
 				break;
 			case STATE_SELECT:
-				drawScreenButton( _g, MYLAYOUT_BACK, "–ß‚é" );
+				drawScreenButton( _g, MYLAYOUT_BACK, "æˆ»ã‚‹" );
 				break;
 			default:
-				drawScreenButton( _g, MYLAYOUT_PAUSE, "’†’f" );
-				drawScreenButton( _g, MYLAYOUT_BACK, "–ß‚é" );
+				drawScreenButton( _g, MYLAYOUT_PAUSE, "ä¸­æ–­" );
+				drawScreenButton( _g, MYLAYOUT_BACK, "æˆ»ã‚‹" );
 				_g.setColor( COLOR_C );
 				drawScreenButton2( _g, MYLAYOUT_SHIELD_0 );
 				_g.setColor( COLOR_M );
@@ -1578,7 +1578,7 @@ public class Speeder extends _Main {
 		}
 
 		/**
-		 * ƒL[“ü—Íˆ—
+		 * ã‚­ãƒ¼å…¥åŠ›å‡¦ç†
 		 */
 		public void processEvent( int type, int param ){
 			if( processingEvent ) return;
@@ -1719,26 +1719,26 @@ public class Speeder extends _Main {
 	}
 
 	/**
-	 * ƒXƒe[ƒW
+	 * ã‚¹ãƒ†ãƒ¼ã‚¸
 	 */
 	class Stage {
-		int _back = -1;		// ”wŒi‚Ìí—Ş
-		int _col;			// ƒEƒF[ƒu‚ÌF
+		int _back = -1;		// èƒŒæ™¯ã®ç¨®é¡
+		int _col;			// ã‚¦ã‚§ãƒ¼ãƒ–ã®è‰²
 		int old_distance;
 		int x, _move_x, _offset_x;
 		boolean counter;
 		int bar;
-		Vector<Star> star;		// ¯î•ñ
+		Vector<Star> star;		// æ˜Ÿæƒ…å ±
 
 		/**
-		 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		 */
 		Stage(){
 			star = new Vector<Star>();
 		}
 
 		/**
-		 * ƒXƒe[ƒWƒf[ƒ^\’z
+		 * ã‚¹ãƒ†ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿æ§‹ç¯‰
 		 */
 		public void create(){
 			int i;
@@ -1757,7 +1757,7 @@ public class Speeder extends _Main {
 
 			_col = (rand.nextInt() % 2) + 1;
 
-			// ƒV[ƒ‹ƒh•ÏX
+			// ã‚·ãƒ¼ãƒ«ãƒ‰å¤‰æ›´
 			if( level == 5 ){
 				speeder[0].shield( _col );
 			}
@@ -1785,7 +1785,7 @@ public class Speeder extends _Main {
 		}
 
 		/**
-		 * ƒXƒe[ƒWƒf[ƒ^XV
+		 * ã‚¹ãƒ†ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿æ›´æ–°
 		 */
 		public void update(){
 			int i;
@@ -1872,10 +1872,10 @@ public class Speeder extends _Main {
 					_col = (rand.nextInt() % 2) + 1;
 					if( _col != old_col ){
 						if( (level < 2) || (level == 7) ){
-							// ƒV[ƒ‹ƒhØ‚è‘Ö‚¦‘¬“xŒv‘ªŠJn
+							// ã‚·ãƒ¼ãƒ«ãƒ‰åˆ‡ã‚Šæ›¿ãˆé€Ÿåº¦è¨ˆæ¸¬é–‹å§‹
 							_elapse_s = 1;
 
-							// ƒV[ƒ‹ƒh•ÏX
+							// ã‚·ãƒ¼ãƒ«ãƒ‰å¤‰æ›´
 							for( i = 0; i < 2; i++ ){
 								if( shield_wait[i] == 0 ){
 									shield_wait[i] = shield_lag[i];
@@ -1912,7 +1912,7 @@ public class Speeder extends _Main {
 			}
 		}
 
-		// ƒEƒF[ƒu‚ÌF‚ğŠm”F
+		// ã‚¦ã‚§ãƒ¼ãƒ–ã®è‰²ã‚’ç¢ºèª
 		public int col(){ return _col; }
 
 		public int move_x(){ return _move_x; }
@@ -1920,7 +1920,7 @@ public class Speeder extends _Main {
 		public int offset_x(){ return _offset_x; }
 
 		/**
-		 * •`‰æ
+		 * æç”»
 		 */
 		public void draw( boolean ready ){
 			if( _back < 5 ){
@@ -1968,20 +1968,20 @@ public class Speeder extends _Main {
 	}
 
 	/**
-	 * ƒEƒF[ƒu
+	 * ã‚¦ã‚§ãƒ¼ãƒ–
 	 */
 	class Wave {
-		Vector<Bar> bar;	// ƒo[î•ñ
+		Vector<Bar> bar;	// ãƒãƒ¼æƒ…å ±
 
 		/**
-		 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		 */
 		Wave(){
 			bar = new Vector<Bar>();
 		}
 
 		/**
-		 * \’z
+		 * æ§‹ç¯‰
 		 */
 		public void create(){
 			bar.removeAllElements();
@@ -1989,7 +1989,7 @@ public class Speeder extends _Main {
 		}
 
 		/**
-		 * ƒo[‚ğ“o˜^‚·‚é
+		 * ãƒãƒ¼ã‚’ç™»éŒ²ã™ã‚‹
 		 */
 		public void add_bar( int x, int y, int col, int count, boolean border ){
 			bar.addElement( new Bar( x, y, col, count, border ) );
@@ -1999,7 +1999,7 @@ public class Speeder extends _Main {
 		}
 
 		/**
-		 * ƒo[‚ª–³‚­‚È‚Á‚½‚©‚Ç‚¤‚©
+		 * ãƒãƒ¼ãŒç„¡ããªã£ãŸã‹ã©ã†ã‹
 		 */
 		public boolean clear(){
 			if( bar.size() <= 0 ) return true;
@@ -2032,7 +2032,7 @@ public class Speeder extends _Main {
 		}
 
 		/**
-		 * ƒEƒF[ƒuƒf[ƒ^XV
+		 * ã‚¦ã‚§ãƒ¼ãƒ–ãƒ‡ãƒ¼ã‚¿æ›´æ–°
 		 */
 		public void update(){
 			for( int i = bar.size() - 1; i >= 0; i-- ){
@@ -2045,7 +2045,7 @@ public class Speeder extends _Main {
 		}
 
 		/**
-		 * •`‰æ
+		 * æç”»
 		 */
 		public int draw(){
 			int cnt = 0;
@@ -2067,7 +2067,7 @@ public class Speeder extends _Main {
 	}
 
 	/**
-	 * ¯
+	 * æ˜Ÿ
 	 */
 	class Star extends Object {
 		int _x, _y;
@@ -2087,7 +2087,7 @@ public class Speeder extends _Main {
 	}
 
 	/**
-	 * ƒo[
+	 * ãƒãƒ¼
 	 */
 	class Bar extends Object {
 		int _x, _y;
@@ -2124,7 +2124,7 @@ public class Speeder extends _Main {
 					_hit[i] = true;
 
 					if( i != 0 ){
-						// ˆÚ“®
+						// ç§»å‹•
 						if( speeder[i].x() <= (_x + 38) ){
 							speeder[i].right();
 							speeder[i].auto( AUTO_MOVED_INERTIA );
@@ -2138,7 +2138,7 @@ public class Speeder extends _Main {
 							speeder[i].auto( AUTO_NEUTRAL );
 						}
 
-						// ƒXƒ‰ƒCƒh
+						// ã‚¹ãƒ©ã‚¤ãƒ‰
 						dsp_x0 = speeder[0].dsp_x();
 						dsp_y0 = speeder[0].dsp_y();
 						dsp_x1 = speeder[1].dsp_x();
@@ -2183,7 +2183,7 @@ public class Speeder extends _Main {
 						}
 					}
 
-					// ˆÚ“®
+					// ç§»å‹•
 					if( level == 4 ){
 						if( speeder[0].x() <= (_x + 38) ){
 							speeder[0].right();
@@ -2199,12 +2199,12 @@ public class Speeder extends _Main {
 						}
 					}
 
-					// ƒV[ƒ‹ƒh•ÏX
+					// ã‚·ãƒ¼ãƒ«ãƒ‰å¤‰æ›´
 					if( level == 5 ){
 						if( _col < 3 ) speeder[0].shield( _col );
 					}
 
-					// ƒXƒs[ƒh•ÏX
+					// ã‚¹ãƒ”ãƒ¼ãƒ‰å¤‰æ›´
 					boolean in = true;
 					if( (level != 4) && ((_x > speeder[i].x()) || ((_x + 176) < speeder[i].x())) ){
 						in = false;
@@ -2225,7 +2225,7 @@ public class Speeder extends _Main {
 					}
 
 					if( i == 0 ){
-						// ƒXƒs[ƒh•ÏX
+						// ã‚¹ãƒ”ãƒ¼ãƒ‰å¤‰æ›´
 						if( (level < 2) || (level == 7) ){
 							if( speeder[1].out() ){
 								if( (speeder[1].dsp_y() <= -48) && (shield_wait[0] > 0) ){
@@ -2243,7 +2243,7 @@ public class Speeder extends _Main {
 							}
 						}
 
-						// ƒ‰ƒbƒvƒ^ƒCƒ€Œv‘ª
+						// ãƒ©ãƒƒãƒ—ã‚¿ã‚¤ãƒ è¨ˆæ¸¬
 						if( _border ){
 							_elapse_l = _elapse;
 							lap = 9 - _count;
@@ -2271,27 +2271,27 @@ public class Speeder extends _Main {
 	}
 
 	/**
-	 * ƒXƒs[ƒ_[
+	 * ã‚¹ãƒ”ãƒ¼ãƒ€ãƒ¼
 	 */
 	class MySpeeder {
-		boolean _jiki;	// ©‹@‚©‚Ç‚¤‚©
-		int _type;		// í—Ş
-		int _auto;		// ©“®ˆÚ“®‚Ìí—Ş
-		int _distance;	// ‘–s‹——£
-		int _speed;		// ƒXƒs[ƒh
-		int _x, off_x;	// ˆÊ’u
-		boolean _out;	// ‰æ–ÊŠO‚©‚Ç‚¤‚©
-		int _direction;	// ˆÚ“®‚Ìó‘Ô
-		int _shield;	// ƒV[ƒ‹ƒh‚Ìó‘Ô
+		boolean _jiki;	// è‡ªæ©Ÿã‹ã©ã†ã‹
+		int _type;		// ç¨®é¡
+		int _auto;		// è‡ªå‹•ç§»å‹•ã®ç¨®é¡
+		int _distance;	// èµ°è¡Œè·é›¢
+		int _speed;		// ã‚¹ãƒ”ãƒ¼ãƒ‰
+		int _x, off_x;	// ä½ç½®
+		boolean _out;	// ç”»é¢å¤–ã‹ã©ã†ã‹
+		int _direction;	// ç§»å‹•ã®çŠ¶æ…‹
+		int _shield;	// ã‚·ãƒ¼ãƒ«ãƒ‰ã®çŠ¶æ…‹
 
 		/**
-		 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		 */
 		MySpeeder(){
 		}
 
 		/**
-		 * ‰Šú‰»
+		 * åˆæœŸåŒ–
 		 */
 		public void init( boolean jiki, int type, int speed, int x ){
 			_jiki      = jiki;
@@ -2306,7 +2306,7 @@ public class Speeder extends _Main {
 		}
 
 		/**
-		 * ¶ˆÚ“®
+		 * å·¦ç§»å‹•
 		 */
 		public void left(){
 			switch( _type ){
@@ -2321,7 +2321,7 @@ public class Speeder extends _Main {
 		}
 
 		/**
-		 * ‰EˆÚ“®
+		 * å³ç§»å‹•
 		 */
 		public void right(){
 			switch( _type ){
@@ -2336,7 +2336,7 @@ public class Speeder extends _Main {
 		}
 
 		/**
-		 * Šµ«ˆÚ“®
+		 * æ…£æ€§ç§»å‹•
 		 */
 		public void inertia( boolean neutral ){
 			if( neutral ){
@@ -2379,20 +2379,20 @@ public class Speeder extends _Main {
 
 		public int type(){ return _type; }
 
-		// ©“®ˆÚ“®‚Ìí—Ş‚ğ•ÏX
+		// è‡ªå‹•ç§»å‹•ã®ç¨®é¡ã‚’å¤‰æ›´
 		public void auto( int type ){ _auto = type; }
 
-		// ©“®ˆÚ“®‚Ìí—Ş‚ğŠm”F
+		// è‡ªå‹•ç§»å‹•ã®ç¨®é¡ã‚’ç¢ºèª
 		public int auto(){ return _auto; }
 
-		// ‘–s‹——£‚ğ•ÏX
+		// èµ°è¡Œè·é›¢ã‚’å¤‰æ›´
 		public void add_distance( int val ){ _distance += val; }
 
-		// ‘–s‹——£‚ğŠm”F
+		// èµ°è¡Œè·é›¢ã‚’ç¢ºèª
 		public int distance(){ return _distance; }
 
 		/**
-		 * ƒXƒs[ƒh‚ğã‚°‚é
+		 * ã‚¹ãƒ”ãƒ¼ãƒ‰ã‚’ä¸Šã’ã‚‹
 		 */
 		public void speed_up( int val ){
 			_speed += val;
@@ -2415,7 +2415,7 @@ public class Speeder extends _Main {
 		}
 
 		/**
-		 * ƒXƒs[ƒh‚ğ—‚Æ‚·
+		 * ã‚¹ãƒ”ãƒ¼ãƒ‰ã‚’è½ã¨ã™
 		 */
 		public void speed_down( int val ){
 			_speed -= val;
@@ -2438,16 +2438,16 @@ public class Speeder extends _Main {
 		}
 
 		/**
-		 * ƒXƒs[ƒh‚ğ§ŒÀ‚·‚é
+		 * ã‚¹ãƒ”ãƒ¼ãƒ‰ã‚’åˆ¶é™ã™ã‚‹
 		 */
 		public void speed_limit( int val ){
 			if( _speed > val ) _speed = val;
 		}
 
-		// ƒXƒs[ƒh‚ğŠm”F
+		// ã‚¹ãƒ”ãƒ¼ãƒ‰ã‚’ç¢ºèª
 		public int speed(){ return _speed; }
 
-		// ƒV[ƒ‹ƒh‚Ìó‘Ô‚ğ•ÏX
+		// ã‚·ãƒ¼ãƒ«ãƒ‰ã®çŠ¶æ…‹ã‚’å¤‰æ›´
 		public void shield( int col ){
 			_shield = col;
 			if( _jiki && (_elapse_s > 0) && (_shield == stage.col()) ){
@@ -2459,19 +2459,19 @@ public class Speeder extends _Main {
 			}
 		}
 
-		// ƒV[ƒ‹ƒh‚Ìó‘Ô‚ğŠm”F
+		// ã‚·ãƒ¼ãƒ«ãƒ‰ã®çŠ¶æ…‹ã‚’ç¢ºèª
 		public int shield(){ return _shield; }
 
-		// ˆÊ’u‚ğŠm”F
+		// ä½ç½®ã‚’ç¢ºèª
 		public int x(){ return _x; }
 		public int dsp_x(){ return _jiki ? 108 : (108 + (_x - speeder[0].x())); }
 		public int dsp_y(){ return _jiki ? 192 : (192 - (_distance - speeder[0].distance()) / 10); }
 
-		// ˆÚ“®‚Ìó‘Ô‚ğŠm”F
+		// ç§»å‹•ã®çŠ¶æ…‹ã‚’ç¢ºèª
 		public int direction(){ return _direction; }
 
 		/**
-		 * •`‰æ
+		 * æç”»
 		 */
 		public void draw( boolean ready ){
 			int x = dsp_x();

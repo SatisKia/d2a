@@ -89,7 +89,7 @@ public class _WebView extends WebViewClient {
 	}
 
 	public void addJavascriptInterface( Object object, String name ){
-		// Android 4.2ÅiAPI level 17Åjà»ç~
+		// Android 4.2ÔºàAPI level 17Ôºâ‰ª•Èôç
 		if( Build.VERSION.SDK_INT >= 17 ){
 			_view.addJavascriptInterface( object, name );
 		}
@@ -117,7 +117,7 @@ public class _WebView extends WebViewClient {
 		if( enabled ){
 			_view.getSettings().setDatabaseEnabled( true );
 
-			// Android 4.4ÅiAPI level 19Åjà»ëO
+			// Android 4.4ÔºàAPI level 19Ôºâ‰ª•Ââç
 			if( Build.VERSION.SDK_INT < 19 ){
 				File databaseDir = _m.getDir( "databases", Context.MODE_PRIVATE );
 				if( !databaseDir.exists() ){
@@ -150,7 +150,7 @@ public class _WebView extends WebViewClient {
 		_view.loadUrl( "javascript:" + script );
 	}
 
-	// êVÇµÇ¢ URL Ç™éwíËÇ≥ÇÍÇΩÇ∆Ç´ÇÃèàóù
+	// Êñ∞„Åó„ÅÑ URL „ÅåÊåáÂÆö„Åï„Çå„Åü„Å®„Åç„ÅÆÂá¶ÁêÜ
 	@Override
 	public boolean shouldOverrideUrlLoading( WebView view, String url ){
 		if( _m.onWebViewShouldStartLoad( url ) ){
@@ -159,21 +159,21 @@ public class _WebView extends WebViewClient {
 		return super.shouldOverrideUrlLoading( view, url );
 	}
 
-	// ÉyÅ[ÉWì«Ç›çûÇ›äJénéûÇÃèàóù
+	// „Éö„Éº„Ç∏Ë™≠„ÅøËæº„ÅøÈñãÂßãÊôÇ„ÅÆÂá¶ÁêÜ
 	@Override
 	public void onPageStarted( WebView view, String url, Bitmap favicon ){
 		super.onPageStarted( view, url, favicon );
 		_m.onWebViewStartLoad( url );
 	}
 
-	// ÉyÅ[ÉWì«Ç›çûÇ›äÆóπéûÇÃèàóù
+	// „Éö„Éº„Ç∏Ë™≠„ÅøËæº„ÅøÂÆå‰∫ÜÊôÇ„ÅÆÂá¶ÁêÜ
 	@Override
 	public void onPageFinished( WebView view, String url ){
 		super.onPageFinished( view, url );
 		_m.onWebViewFinishLoad( url );
 	}
 
-	// ÉyÅ[ÉWì«Ç›çûÇ›ÉGÉâÅ[éûÇÃèàóù
+	// „Éö„Éº„Ç∏Ë™≠„ÅøËæº„Åø„Ç®„É©„ÉºÊôÇ„ÅÆÂá¶ÁêÜ
 	@Override
 	public void onReceivedError( WebView view, int errorCode, String description, String failingUrl ){
 		super.onReceivedError( view, errorCode, description, failingUrl );

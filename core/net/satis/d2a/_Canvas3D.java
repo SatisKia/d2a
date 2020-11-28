@@ -27,7 +27,7 @@ public class _Canvas3D extends _Canvas implements Renderer {
 		public MyView( Context context ){
 			super( context );
 
-			// ƒtƒH[ƒJƒX
+			// ãƒ•ã‚©ãƒ¼ã‚«ã‚¹
 			setFocusable( true );
 			setFocusableInTouchMode( true );
 		}
@@ -56,7 +56,7 @@ public class _Canvas3D extends _Canvas implements Renderer {
 	}
 
 	private void initSub(){
-		// ƒfƒvƒXƒoƒbƒtƒ@‚ğ—LŒø‚É‚·‚é
+		// ãƒ‡ãƒ—ã‚¹ãƒãƒƒãƒ•ã‚¡ã‚’æœ‰åŠ¹ã«ã™ã‚‹
 		_gl.glEnable( GL10.GL_DEPTH_TEST );
 
 		int color = backgroundColor();
@@ -131,7 +131,7 @@ public class _Canvas3D extends _Canvas implements Renderer {
 		_width  = width;
 		_height = height;
 
-		// ƒEƒBƒ“ƒhƒEİ’è
+		// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦è¨­å®š
 		setWindow( 0, 0, _width, _height, _width, _height );
 
 		init();

@@ -35,7 +35,7 @@ public class _GLTexture extends _Scalable {
 
 	private int _canvas_height;
 
-	// ƒCƒ[ƒW•`‰æ‚Ì”½“]•û–@
+	// ã‚¤ãƒ¡ãƒ¼ã‚¸æç”»æ™‚ã®åè»¢æ–¹æ³•
 	public static final int FLIP_NONE       = 0;
 	public static final int FLIP_HORIZONTAL = 1;
 	public static final int FLIP_VERTICAL   = 2;
@@ -124,7 +124,7 @@ public class _GLTexture extends _Scalable {
 			}
 		}
 
-		// ‰æ‘œƒtƒ@ƒCƒ‹“Ç‚İ‚İ
+		// ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«èª­ã¿è¾¼ã¿
 		Bitmap tmp = createBitmap( _res, index );
 		if( tmp.isMutable() ){
 			_bitmap[index] = tmp;
@@ -140,14 +140,14 @@ public class _GLTexture extends _Scalable {
 			_bitmap[index].getPixels( _t_rgba[index], 0, _width[index], 0, 0, _width[index], _height[index] );
 			_t_a[index] = new int[len];
 			for( i = 0; i < len; i++ ){
-				_t_a[index][i] = (_t_rgba[index][i] >> 24) & 0xff;	// ƒAƒ‹ƒtƒ@’l‚ğ•Û
+				_t_a[index][i] = (_t_rgba[index][i] >> 24) & 0xff;	// ã‚¢ãƒ«ãƒ•ã‚¡å€¤ã‚’ä¿æŒ
 			}
 		}
 
 		_t_trans[index] = 255;
 		_t_alpha[index] = alphaFlag( index );
 
-		// ƒeƒNƒXƒ`ƒƒ‚ğ\’z‚·‚é
+		// ãƒ†ã‚¯ã‚¹ãƒãƒ£ã‚’æ§‹ç¯‰ã™ã‚‹
 		_gl.glPixelStorei( GL10.GL_UNPACK_ALIGNMENT, 1 );
 		_gl.glEnable( GL10.GL_TEXTURE_2D );
 		_gl.glBindTexture( GL10.GL_TEXTURE_2D, _id[_index2id[index]] );
@@ -193,14 +193,14 @@ public class _GLTexture extends _Scalable {
 				if( (_t_rgba[index] != null) && (_t_a[index] != null) ){
 					System.arraycopy( pixels, 0, _t_rgba[index], 0, len );
 					for( int i = 0; i < len; i++ ){
-						_t_a[index][i] = (_t_rgba[index][i] >> 24) & 0xff;	// ƒAƒ‹ƒtƒ@’l‚ğ•Û
+						_t_a[index][i] = (_t_rgba[index][i] >> 24) & 0xff;	// ã‚¢ãƒ«ãƒ•ã‚¡å€¤ã‚’ä¿æŒ
 					}
 				}
 
 				_t_trans[index] = 255;
 				_t_alpha[index] = alphaFlag( index );
 
-				// ƒeƒNƒXƒ`ƒƒ‚ğÄ\’z‚·‚é
+				// ãƒ†ã‚¯ã‚¹ãƒãƒ£ã‚’å†æ§‹ç¯‰ã™ã‚‹
 				_gl.glPixelStorei( GL10.GL_UNPACK_ALIGNMENT, 1 );
 				_gl.glEnable( GL10.GL_TEXTURE_2D );
 				_gl.glBindTexture( GL10.GL_TEXTURE_2D, _id[_index2id[index]] );
@@ -220,14 +220,14 @@ public class _GLTexture extends _Scalable {
 					bitmap.getPixels( _t_rgba[index], 0, _width[index], 0, 0, _width[index], _height[index] );
 					_bitmap[index].setPixels( _t_rgba[index], 0, _width[index], 0, 0, _width[index], _height[index] );
 					for( int i = 0; i < len; i++ ){
-						_t_a[index][i] = (_t_rgba[index][i] >> 24) & 0xff;	// ƒAƒ‹ƒtƒ@’l‚ğ•Û
+						_t_a[index][i] = (_t_rgba[index][i] >> 24) & 0xff;	// ã‚¢ãƒ«ãƒ•ã‚¡å€¤ã‚’ä¿æŒ
 					}
 				}
 
 				_t_trans[index] = 255;
 				_t_alpha[index] = alphaFlag( index );
 
-				// ƒeƒNƒXƒ`ƒƒ‚ğÄ\’z‚·‚é
+				// ãƒ†ã‚¯ã‚¹ãƒãƒ£ã‚’å†æ§‹ç¯‰ã™ã‚‹
 				_gl.glPixelStorei( GL10.GL_UNPACK_ALIGNMENT, 1 );
 				_gl.glEnable( GL10.GL_TEXTURE_2D );
 				_gl.glBindTexture( GL10.GL_TEXTURE_2D, _id[_index2id[index]] );
@@ -248,7 +248,7 @@ public class _GLTexture extends _Scalable {
 		}
 		_t_trans[index] = trans;
 
-		// ƒAƒ‹ƒtƒ@’l‚ğ‘€ì‚·‚é
+		// ã‚¢ãƒ«ãƒ•ã‚¡å€¤ã‚’æ“ä½œã™ã‚‹
 		int len = _width[index] * _height[index];
 		int a, r, g, b;
 		for( int i = 0; i < len; i++ ){
@@ -262,7 +262,7 @@ public class _GLTexture extends _Scalable {
 
 		_t_alpha[index] = (_t_trans[index] == 255) ? alphaFlag( index ) : true;
 
-		// ƒeƒNƒXƒ`ƒƒ‚ğÄ\’z‚·‚é
+		// ãƒ†ã‚¯ã‚¹ãƒãƒ£ã‚’å†æ§‹ç¯‰ã™ã‚‹
 		_gl.glPixelStorei( GL10.GL_UNPACK_ALIGNMENT, 1 );
 		_gl.glEnable( GL10.GL_TEXTURE_2D );
 		_gl.glBindTexture( GL10.GL_TEXTURE_2D, _id[_index2id[index]] );

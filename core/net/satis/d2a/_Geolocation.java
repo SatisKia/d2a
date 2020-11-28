@@ -19,9 +19,9 @@ public class _Geolocation {
 	public static final int PROVIDER_BEST    = (PROVIDER_GPS | PROVIDER_NETWORK);
 
 	public static final int ERROR                = 0;
-	public static final int PERMISSION_DENIED    = 1;	// ˆÊ’uî•ñ‚Ì—˜—p‚ª‹–‰Â‚³‚ê‚Ä‚¢‚È‚¢
-	public static final int POSITION_UNAVAILABLE = 2;	// ƒfƒoƒCƒX‚ÌˆÊ’u‚ª”»’è‚Å‚«‚È‚¢
-	public static final int TIMEOUT              = 3;	// ƒ^ƒCƒ€ƒAƒEƒg
+	public static final int PERMISSION_DENIED    = 1;	// ä½ç½®æƒ…å ±ã®åˆ©ç”¨ãŒè¨±å¯ã•ã‚Œã¦ã„ãªã„
+	public static final int POSITION_UNAVAILABLE = 2;	// ãƒ‡ãƒã‚¤ã‚¹ã®ä½ç½®ãŒåˆ¤å®šã§ããªã„
+	public static final int TIMEOUT              = 3;	// ã‚¿ã‚¤ãƒ ã‚¢ã‚¦ãƒˆ
 	public static final int AVAILABLE            = 10;
 	public static final int SUCCESS              = 11;
 	public static final int LAST_KNOWN           = 12;
@@ -102,7 +102,7 @@ public class _Geolocation {
 			return "";
 		}
 
-		// ‘O‰ñ‚Ìæ“¾ˆÊ’uî•ñ‚ªŠÔ“à‚Ì‚à‚Ì‚Å‚ ‚ê‚Î—LŒø
+		// å‰å›ã®å–å¾—ä½ç½®æƒ…å ±ãŒæ™‚é–“å†…ã®ã‚‚ã®ã§ã‚ã‚Œã°æœ‰åŠ¹
 		Location lastKnownLocation = _manager.getLastKnownLocation( provider );
 		if( (lastKnownLocation != null) && (((new Date()).getTime() - lastKnownLocation.getTime()) <= _maximumAge) ){
 			success( LAST_KNOWN, lastKnownLocation );
@@ -128,7 +128,7 @@ public class _Geolocation {
 			}
 		}, 0L, 1000L );
 
-		// ˆÊ’uî•ñ‚Ìæ“¾‚ğŠJn
+		// ä½ç½®æƒ…å ±ã®å–å¾—ã‚’é–‹å§‹
 		_listener = new LocationListener(){
 			@Override
 			public void onLocationChanged( Location location ){

@@ -47,7 +47,7 @@ public class _LinearMove {
 				w = _x - _x0;
 				h = _y - _y0;
 				if( (w * w + h * h) >= d2 ){
-					// –Ú•W‹——£‚É’B‚·‚é‚Æ”²‚¯‚é
+					// ç›®æ¨™è·é›¢ã«é”ã™ã‚‹ã¨æŠœã‘ã‚‹
 					break;
 				}
 			}
@@ -63,7 +63,7 @@ public class _LinearMove {
 				w = _x - _x0;
 				h = _y - _y0;
 				if( (w * w + h * h) >= d2 ){
-					// –Ú•W‹——£‚É’B‚·‚é‚Æ”²‚¯‚é
+					// ç›®æ¨™è·é›¢ã«é”ã™ã‚‹ã¨æŠœã‘ã‚‹
 					break;
 				}
 			}

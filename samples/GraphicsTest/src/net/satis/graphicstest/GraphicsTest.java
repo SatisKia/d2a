@@ -14,13 +14,13 @@ public class GraphicsTest extends _Main {
 	public void start(){
 		setCurrent( new MyCanvas() );
 
-		// ƒŠƒ\[ƒX‚©‚çì¬‚·‚é
+		// ãƒªã‚½ãƒ¼ã‚¹ã‹ã‚‰ä½œæˆã™ã‚‹
 		Resources r = getResources();
 		img1 = _Image.createImage( r, R.drawable.sample );
 		img2 = _Image.createImage( r, R.drawable.sample );
 		img2.mutable();
 
-		// ƒIƒtƒXƒNƒŠ[ƒ“‚ğì¬‚·‚é
+		// ã‚ªãƒ•ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã‚’ä½œæˆã™ã‚‹
 		img3 = _Image.createImage( 100, 100 );
 
 		str = new String( "Graphics Test" );
@@ -63,7 +63,7 @@ public class GraphicsTest extends _Main {
 		public void paint( _Graphics _g ){
 			g.setGraphics( _g );
 
-			// ƒIƒtƒXƒNƒŠ[ƒ“‚É•`‰æ
+			// ã‚ªãƒ•ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã«æç”»
 			_Graphics g2 = img3.getGraphics();
 			g2.drawImage( img1, -50, -50 );
 
@@ -72,7 +72,7 @@ public class GraphicsTest extends _Main {
 			g.setColor( _Graphics.getColorOfRGB( 128, 128, 255 ) );
 			g.fillRect( 0, 0, g.getWidth(), g.getHeight() );
 
-			// ƒNƒŠƒbƒsƒ“ƒO‚ÌƒeƒXƒg
+			// ã‚¯ãƒªãƒƒãƒ”ãƒ³ã‚°ã®ãƒ†ã‚¹ãƒˆ
 			g.setColor( _Graphics.getColorOfRGB( 255, 255, 255 ) );
 			g.fillRect( 50, 400, 300, 300 );
 			g.setClip( 100, 450, 200, 200 );
@@ -80,7 +80,7 @@ public class GraphicsTest extends _Main {
 			g.fillRect( 50, 400, 300, 300 );
 			g.clearClip();
 
-			// •`‰æ‚ÌÛ‚ÌÀ•WŒ´“_w’è‚ÌƒeƒXƒg
+			// æç”»ã®éš›ã®åº§æ¨™åŸç‚¹æŒ‡å®šã®ãƒ†ã‚¹ãƒˆ
 			g.setOrigin( 50, 50 );
 
 			g.drawImage( img1, 30, 50 );

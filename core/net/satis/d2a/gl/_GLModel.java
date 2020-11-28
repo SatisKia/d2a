@@ -9,23 +9,23 @@ import java.nio.*;
 import javax.microedition.khronos.opengles.GL10;
 
 public class _GLModel extends _GLPrimitive {
-	// ƒ}ƒeƒŠƒAƒ‹
+	// ãƒãƒ†ãƒªã‚¢ãƒ«
 	public int _material_num = 0;
 	public int[] _material_texture = null;
-	public float[] _material_diffuse = null;	// RAGABAA‚ğŠe 0`1
-	public float[] _material_ambient = null;	// RAGABAA‚ğŠe 0`1
-	public float[] _material_emission = null;	// RAGABAA‚ğŠe 0`1
-	public float[] _material_specular = null;	// RAGABAA‚ğŠe 0`1
-	public float[] _material_shininess = null;	// 0`128
+	public float[] _material_diffuse = null;	// Rã€Gã€Bã€Aã‚’å„ 0ï½1
+	public float[] _material_ambient = null;	// Rã€Gã€Bã€Aã‚’å„ 0ï½1
+	public float[] _material_emission = null;	// Rã€Gã€Bã€Aã‚’å„ 0ï½1
+	public float[] _material_specular = null;	// Rã€Gã€Bã€Aã‚’å„ 0ï½1
+	public float[] _material_shininess = null;	// 0ï½128
 
-	// ƒIƒuƒWƒFƒNƒg
+	// ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	public int _object_num = 0;
-	public float[][] _coord = null;		// XAYAZ
-	public float[][] _normal = null;	// XAYAZ
-	public float[][] _color = null;		// RAGABAA‚ğŠe 0`1
-	public float[][] _map = null;		// UAV
+	public float[][] _coord = null;		// Xã€Yã€Z
+	public float[][] _normal = null;	// Xã€Yã€Z
+	public float[][] _color = null;		// Rã€Gã€Bã€Aã‚’å„ 0ï½1
+	public float[][] _map = null;		// Uã€V
 
-	// OŠpŒ`ƒXƒgƒŠƒbƒv
+	// ä¸‰è§’å½¢ã‚¹ãƒˆãƒªãƒƒãƒ—
 	public int _strip_num = 0;
 	public int[] _strip_material = null;
 	public int[] _strip_coord = null;
@@ -97,8 +97,8 @@ public class _GLModel extends _GLPrimitive {
 			glt.setTransparency( tex_index, transparency() );
 			alpha = glt.alpha( tex_index );
 			if( depth ){
-				// ƒ‚ƒfƒ‹‘S‘Ì‚ÅƒfƒvƒXƒoƒbƒtƒ@•`‚«‚İƒ‚[ƒh‚É‚È‚Á‚Ä‚¢‚éê‡‚Ì‚İA
-				// ƒeƒNƒXƒ`ƒƒŒÂ•Ê‚Ìƒ‚[ƒh‚ğŒ©‚éB
+				// ãƒ¢ãƒ‡ãƒ«å…¨ä½“ã§ãƒ‡ãƒ—ã‚¹ãƒãƒƒãƒ•ã‚¡æãè¾¼ã¿ãƒ¢ãƒ¼ãƒ‰ã«ãªã£ã¦ã„ã‚‹å ´åˆã®ã¿ã€
+				// ãƒ†ã‚¯ã‚¹ãƒãƒ£å€‹åˆ¥ã®ãƒ¢ãƒ¼ãƒ‰ã‚’è¦‹ã‚‹ã€‚
 				depth = glt.depth( tex_index );
 			}
 		}

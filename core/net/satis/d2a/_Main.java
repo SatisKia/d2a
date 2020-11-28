@@ -5,7 +5,6 @@
 
 package net.satis.d2a;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -14,16 +13,17 @@ import android.media.AudioManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.*;
+import androidx.appcompat.app.AppCompatActivity;
 import java.io.InputStream;
 
-public class _Main extends Activity {
+public class _Main extends AppCompatActivity {
 	private _Canvas _canvas = null;
 	private ViewGroup _view = null;
 	private boolean _suspend = false;
 
 	private AudioManager _audio;
 
-	// ‰æ–Ê‚ÌŒü‚«
+	// ç”»é¢ã®å‘ã
 	public static final int ORIENTATION_NOSENSOR  = ActivityInfo.SCREEN_ORIENTATION_NOSENSOR;
 	public static final int ORIENTATION_LANDSCAPE = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;
 	public static final int ORIENTATION_PORTRAIT  = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
@@ -49,7 +49,7 @@ public class _Main extends Activity {
 
 		requestWindowFeature( Window.FEATURE_NO_TITLE );
 
-		// ƒI[ƒfƒBƒIŠÖ˜A
+		// ã‚ªãƒ¼ãƒ‡ã‚£ã‚ªé–¢é€£
 		setVolumeControlStream( AudioManager.STREAM_MUSIC );
 		_audio = (AudioManager)getSystemService( Context.AUDIO_SERVICE );
 
@@ -198,21 +198,21 @@ public class _Main extends Activity {
 	public void resume(){}
 	public void configurationChanged( Configuration config ){}
 
-	// _Geolocation ƒNƒ‰ƒX—p
+	// _Geolocation ã‚¯ãƒ©ã‚¹ç”¨
 	public void onGeolocation( int code ){}
 
-	// _HttpRequest ƒNƒ‰ƒX—p
+	// _HttpRequest ã‚¯ãƒ©ã‚¹ç”¨
 	public void onHttpResponse( InputStream is ){}
 	public void onHttpError( int status ){}
 
-	// _Music ƒNƒ‰ƒX—p
+	// _Music ã‚¯ãƒ©ã‚¹ç”¨
 	public int volumeMusic(){ return 100; }
 	public void musicComplete( int index ){}
 
-	// _Sound^_SoundPool ƒNƒ‰ƒX—p
+	// _Soundï¼_SoundPool ã‚¯ãƒ©ã‚¹ç”¨
 	public int volumeSound(){ return 100; }
 
-	// _WebView ƒNƒ‰ƒX—p
+	// _WebView ã‚¯ãƒ©ã‚¹ç”¨
 	public boolean onWebViewShouldStartLoad( String url ){ return false; }
 	public void onWebViewStartLoad( String url ){}
 	public void onWebViewFinishLoad( String url ){}

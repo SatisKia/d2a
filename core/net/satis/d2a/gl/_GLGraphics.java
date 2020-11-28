@@ -17,32 +17,32 @@ public class _GLGraphics extends _Scalable {
 	private int _width;
 	private int _height;
 
-	// ü•
+	// ç·šå¹…
 	private float _line_width;
 	private float _line_expand;
 
-	// F
+	// è‰²
 	private float _r;
 	private float _g;
 	private float _b;
 
-	// “§–¾“x
+	// é€æ˜åº¦
 //	private int _a255;
 	private float _a;
 
-	// ƒ‰ƒXƒ^[ƒIƒyƒŒ[ƒVƒ‡ƒ“
+	// ãƒ©ã‚¹ã‚¿ãƒ¼ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³
 	public static final int ROP_COPY = 0;
 	public static final int ROP_ADD  = 1;
 	private int _rop;
 
-	// ƒCƒ[ƒW•`‰æ‚Ì”½“]•û–@
+	// ã‚¤ãƒ¡ãƒ¼ã‚¸æç”»æ™‚ã®åè»¢æ–¹æ³•
 	public static final int FLIP_NONE       = 0;
 	public static final int FLIP_HORIZONTAL = 1;
 	public static final int FLIP_VERTICAL   = 2;
 	public static final int FLIP_ROTATE     = 3;
 	private int _flipmode = FLIP_NONE;
 
-	// •`‰æ‚ÌÛ‚ÌÀ•WŒ´“_
+	// æç”»ã®éš›ã®åº§æ¨™åŸç‚¹
 	private int _origin_x = 0;
 	private int _origin_y = 0;
 
@@ -218,7 +218,7 @@ public class _GLGraphics extends _Scalable {
 	public void setFlipMode( int flipmode ){
 		_flipmode = flipmode;
 
-		// _GLTexture ‚É‚à’Ê’m
+		// _GLTexture ã«ã‚‚é€šçŸ¥
 		_glt.setFlipMode( _flipmode );
 	}
 

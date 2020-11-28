@@ -54,7 +54,7 @@ public class HttpTest extends _Main {
 		} else {
 			tmp = "" + status;
 		}
-		str2 = "通信エラー " + tmp;
+		str2 = "騾壻ｿ｡繧ｨ繝ｩ繝ｼ " + tmp;
 	}
 
 	public class MyCanvas extends _Canvas {
@@ -81,19 +81,19 @@ public class HttpTest extends _Main {
 
 			if( http.busy() ){
 				switch( elapse % 3 ){
-				case 0: g.drawString( "通信中."  , 0, 30 ); break;
-				case 1: g.drawString( "通信中.." , 0, 30 ); break;
-				case 2: g.drawString( "通信中...", 0, 30 ); break;
+				case 0: g.drawString( "騾壻ｿ｡荳ｭ."  , 0, 30 ); break;
+				case 1: g.drawString( "騾壻ｿ｡荳ｭ.." , 0, 30 ); break;
+				case 2: g.drawString( "騾壻ｿ｡荳ｭ...", 0, 30 ); break;
 				}
 			} else {
-				g.drawString( "タッチしてください", 0, 30 );
+				g.drawString( "繧ｿ繝�繝√＠縺ｦ縺上□縺輔＞", 0, 30 );
 			}
 
-			g.drawString( "通信URL", 0, 90 );
+			g.drawString( "騾壻ｿ｡URL", 0, 90 );
 			g.drawString( server, 0, 120 );
 			g.drawString( str1, 0, 150 );
 
-			g.drawString( "レスポンス", 0, 210 );
+			g.drawString( "繝ｬ繧ｹ繝昴Φ繧ｹ", 0, 210 );
 			g.drawString( str2, 0, 240 );
 
 			g.unlock();

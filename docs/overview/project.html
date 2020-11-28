@@ -27,35 +27,18 @@
 </TABLE>
 </P>
 
-<P>「Eclipse」を起動します。</P>
+<P>「Android Studio」を起動します。</P>
 
-<P>「File」-「New」-「Android Application Project」を実行します。</P>
+<P>「Start a new Android Studio project」を実行しますと「Create New Project」ダイアログが開きます。</P>
 
-<P><B>（1-1）「New Android Application」ページ</B></P>
+<P>「Empty Activity」を選択して「Next」ボタンを押します。</P>
 
 <!--<P><IMG src="project_1.png" height="600" border="0"></P>-->
 
-<P>「Application Name」に「<B>HelloWorld</B>」と入力<BR>
-「Project Name」は「<B>HelloWorld</B>」<BR>
+<P>「Name」に「<B>Hello World</B>」と入力<BR>
 「Package Name」に「<B>net.satis.helloworld</B>」と入力<BR>
-「Minimum Required SDK」「Target SDK」は「API 7: Android 2.1 (Eclair)」<BR>
-「Theme」は「None」</P>
-
-<P>「Next &gt;」ボタンを押します。</P>
-
-<P><B>（1-2）「New Android Application」ページ</B></P>
-
-<P>「Create activity」にチェック</P>
-
-<P>「Next &gt;」ボタンを押します。</P>
-
-<P><B>（1-3）「Configure Launcher Icon」ページ</B></P>
-
-<P>「Next &gt;」ボタンを押します。</P>
-
-<P><B>（1-4）「Create Activity」ページ</B></P>
-
-<P>「Create Activity」のチェックを外す</P>
+「Language」を「Java」に<BR>
+「Minimum SDK」を「API 19: Android 4.4 (KitKat)」に<BR>
 
 <P>「Finish」ボタンを押します。</P>
 
@@ -63,55 +46,57 @@
 <TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
 <TR><TD bgcolor="#888888" width="6" height="6"></TD><TD bgcolor="#888888"></TD></TR>
 <TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+2">
-<B>（2）D2Aのソースファイルをプロジェクトに追加する</B>
+<B>（2）d2a-release.aar をプロジェクトに追加する</B>
 </FONT></TD></TR>
 </TABLE>
 </P>
 
+<P>「File」-「New」-「New Module...」を実行しますと「Create New Modile」ダイアログが開きます。</P>
+
+<P>「Import .JAR/.AAR Package」を選択して「Next」ボタンを押します。</P>
+
+<P>「File name」は「d2a-release.aar」を選択<BR>
+「Subproject name」に「d2a」と入力</P>
+
+<P>「Finish」ボタンを押します。</P>
+
+<P>「File」-「Project structure...」を実行します。</P>
+
+<P>左メニューの「Dependencies」を選択、Modules の「app」を選択、Declared Dependencies の「+」メニューの「3 Module Dependency」を選択しますと「Add Module Dependency」ダイアログが開きますので、「d2a」にチェックを入れて「OK」ボタンを押します。</P>
+
+<!--
 <P>Package Explorer の「HelloWorld」をマウス右クリックして、ポップアップメニューの「Properties」を実行します。</P>
 
-<!--<P><IMG src="project_2.png" width="600" border="0"></P>-->
+<P><IMG src="project_2.png" width="600" border="0"></P>
 
 <P>「Java Build Path」を選択し、「Source」タブを選択し、「Link Source...」ボタンを押します。</P>
 
-<!--<P><IMG src="project_3.png" border="0"></P>-->
+<P><IMG src="project_3.png" border="0"></P>
 
 <P>「Linked folder location」に「core」フォルダを指定し、「Finish」ボタンを押します。</P>
 
 <P>「OK」ボタンを押します。</P>
+-->
 
 <P>
 <TABLE border="0" width="100%" cellpadding="0" cellspacing="0">
 <TR><TD bgcolor="#888888" width="6" height="6"></TD><TD bgcolor="#888888"></TD></TR>
 <TR><TD bgcolor="#888888"></TD><TD width="99%"><FONT size="+2">
-<B>（3）ソースファイルを新規作成する</B>
+<B>（3）「MainActivity.java」ファイルの内容を記述する</B>
 </FONT></TD></TR>
 </TABLE>
 </P>
 
-<P>Package Explorer の「HelloWorld」の「src」をマウス右クリックして、ポップアップメニューの「New」-「Package」を実行します。</P>
+<P>「MainActivity.java」ファイルの内容を、デフォルトの内容を一旦消去してから以下のように記述します。</P>
 
-<P>「Name」に「<B>net.satis.helloworld</B>」と入力</P>
-
-<P>「Finish」ボタンを押します。</P>
-
-<P>Package Explorer の「HelloWorld」の「src」の「net.satis.helloworld」をマウス右クリックして、ポップアップメニューの「New」-「Class」を実行します。</P>
-
-<P>「Name」に「<B>HelloWorld</B>」と入力<BR>
-「Superclass」を、とりあえず「<B>java.lang.Object</B>」に</P>
-
-<P>「Finish」ボタンを押します。</P>
-
-<P>「HelloWorld.java」ファイルの内容を、デフォルトの内容を一旦消去してから以下のように記述します。</P>
-
-<P>HelloWorld.java：<BR>
+<P>MainActivity.java：<BR>
 <TABLE border="1" cellpadding="3" cellspacing="0">
 <TR>
 <TD>package net.satis.helloworld;<BR>
 <BR>
 import net.satis.d2a.*;<BR>
 <BR>
-public class HelloWorld extends _Main {<BR>
+public class MainActivity extends _Main {<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;String str;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;int w, h;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;int x, y;<BR>
@@ -178,30 +163,25 @@ public class HelloWorld extends _Main {<BR>
 </TABLE>
 </P>
 
-<P>Package Explorer の「HelloWorld」の「AndroidManifest.xml」をダブルクリックします。</P>
-
-<P>コードを直接書き換えるため、「AndroidManifest.xml」タブに切り替えます。</P>
-
-<P>デフォルトの内容を一旦消去してから以下のように記述します。</P>
+<P>「AndroidManifest.xml」ファイルの内容を、デフォルトの内容を一旦消去してから以下のように記述します。</P>
 
 <P>AndroidManifest.xml：<BR>
 <TABLE border="1" cellpadding="3" cellspacing="0">
 <TR>
 <TD>&lt;?xml version="1.0" encoding="utf-8"?&gt;<BR>
 &lt;manifest xmlns:android="http://schemas.android.com/apk/res/android"<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;package="net.satis.helloworld"<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;android:versionCode="1"<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;android:versionName="1.0"&gt;<BR>
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;uses-sdk android:minSdkVersion="7" /&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;package="net.satis.helloworld"&gt;<BR>
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;application<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:icon="@drawable/ic_launcher"<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:label="@string/app_name"&gt;<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;activity<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:name=".HelloWorld"<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:label="@string/app_name"<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:configChanges="orientation"&gt;<BR>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:allowBackup="true"<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:icon="@mipmap/ic_launcher"<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:label="@string/app_name"<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:supportsRtl="true"<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:theme="@style/AppTheme"&gt;<BR>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;activity android:name=".MainActivity"&gt;<BR>
+<!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:configChanges="orientation"&gt;<BR>-->
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;intent-filter&gt;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;action android:name="android.intent.action.MAIN" /&gt;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category android:name="android.intent.category.LAUNCHER" /&gt;<BR>

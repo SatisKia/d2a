@@ -84,12 +84,12 @@ public class GeolocationTest extends _Main {
 			}
 			g.drawString( "code : " + code + codeString, 0, 60 );
 			g.drawString( "time : " + (end_time - start_time), 0, 90 );
-			g.drawString( "à‹ìx : " + geolocation.latitude(), 0, 120 );
-			g.drawString( "åoìx : " + geolocation.longitude(), 0, 150 );
-			g.drawString( "à‹ìx/åoìxÇÃê∏ìx : " + geolocation.accuracy(), 0, 180 );
-			g.drawString( "çÇìx : " + geolocation.altitude(), 0, 210 );
-			g.drawString( "ï˚äp : " + geolocation.heading(), 0, 240 );
-			g.drawString( "ë¨ìx : " + geolocation.speed(), 0, 270 );
+			g.drawString( "Á∑ØÂ∫¶ : " + geolocation.latitude(), 0, 120 );
+			g.drawString( "ÁµåÂ∫¶ : " + geolocation.longitude(), 0, 150 );
+			g.drawString( "Á∑ØÂ∫¶/ÁµåÂ∫¶„ÅÆÁ≤æÂ∫¶ : " + geolocation.accuracy(), 0, 180 );
+			g.drawString( "È´òÂ∫¶ : " + geolocation.altitude(), 0, 210 );
+			g.drawString( "ÊñπËßí : " + geolocation.heading(), 0, 240 );
+			g.drawString( "ÈÄüÂ∫¶ : " + geolocation.speed(), 0, 270 );
 			g.drawString( "timestamp :", 0, 300 );
 			g.drawString( "" + (new Date( geolocation.timestamp() )), 0, 330 );
 

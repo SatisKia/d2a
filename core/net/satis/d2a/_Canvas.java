@@ -17,7 +17,7 @@ public class _Canvas implements SurfaceHolder.Callback, Runnable {
 	private boolean _suspend = false;
 	private boolean _hide = false;
 
-	// ƒEƒBƒ“ƒhƒEİ’è
+	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦è¨­å®š
 	private int _win_left;
 	private int _win_top;
 	private int _win_right;
@@ -25,10 +25,10 @@ public class _Canvas implements SurfaceHolder.Callback, Runnable {
 	private int _win_width;
 	private int _win_height;
 
-	// ƒŒƒCƒAƒEƒg
+	// ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆ
 	private _Layout _layout = null;
 
-	// ƒCƒxƒ“ƒg
+	// ã‚¤ãƒ™ãƒ³ãƒˆ
 	public static final int KEY_PRESSED_EVENT    = 0;
 	public static final int KEY_RELEASED_EVENT   = 1;
 	public static final int TOUCH_DOWN_EVENT     = 2;
@@ -40,13 +40,13 @@ public class _Canvas implements SurfaceHolder.Callback, Runnable {
 	public static final int LAYOUT_DOWN_EVENT    = 8;
 	public static final int LAYOUT_UP_EVENT      = 9;
 
-	// ƒ^ƒbƒ`ƒCƒxƒ“ƒg—p
+	// ã‚¿ãƒƒãƒã‚¤ãƒ™ãƒ³ãƒˆç”¨
 	private boolean[] _touch_down;
 	private float[] _touch_x;
 	private float[] _touch_y;
 	private boolean[] _old_touch_down;
 
-	// ƒgƒ‰ƒbƒNƒ{[ƒ‹ƒCƒxƒ“ƒg—p
+	// ãƒˆãƒ©ãƒƒã‚¯ãƒœãƒ¼ãƒ«ã‚¤ãƒ™ãƒ³ãƒˆç”¨
 	private float _trackball_x;
 	private float _trackball_y;
 
@@ -57,7 +57,7 @@ public class _Canvas implements SurfaceHolder.Callback, Runnable {
 		public MyView( Context context ){
 			super( context );
 
-			// ƒtƒH[ƒJƒX
+			// ãƒ•ã‚©ãƒ¼ã‚«ã‚¹
 			setFocusable( true );
 			setFocusableInTouchMode( true );
 		}
@@ -87,13 +87,13 @@ public class _Canvas implements SurfaceHolder.Callback, Runnable {
 
 	public SurfaceView create( Context context ){
 		if( _view == null ){
-			// ƒ^ƒbƒ`ƒCƒxƒ“ƒg—p
+			// ã‚¿ãƒƒãƒã‚¤ãƒ™ãƒ³ãƒˆç”¨
 			initTouch();
 
-			// ƒT[ƒtƒFƒCƒXƒrƒ…[
+			// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ãƒ“ãƒ¥ãƒ¼
 			_view = new MyView( context );
 
-			// ƒT[ƒtƒFƒCƒXƒzƒ‹ƒ_[
+			// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ãƒ›ãƒ«ãƒ€ãƒ¼
 			_holder = _view.getHolder();
 			_holder.addCallback( this );
 
@@ -137,14 +137,14 @@ public class _Canvas implements SurfaceHolder.Callback, Runnable {
 		_hide = flag;
 	}
 
-	// ƒT[ƒtƒFƒCƒXƒCƒxƒ“ƒg
+	// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã‚¤ãƒ™ãƒ³ãƒˆ
 	public void surfaceCreated( SurfaceHolder holder ){
 		int width  = getWidth();
 		int height = getHeight();
 
 		_holder.setFixedSize( width, height );
 
-		// ƒEƒBƒ“ƒhƒEİ’è
+		// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦è¨­å®š
 		setWindow( 0, 0, width, height, width, height );
 
 		init();

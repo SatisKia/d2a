@@ -53,7 +53,7 @@ public class GraphicsTest3 extends _Main {
 			glt.setCanvasHeight( height );
 			glt.setScale( (float)width / 400.0f );
 
-			// 2D•`‰æ—p‚ÌƒeƒNƒXƒ`ƒƒEƒCƒ[ƒW
+			// 2Dæç”»ç”¨ã®ãƒ†ã‚¯ã‚¹ãƒãƒ£ãƒ»ã‚¤ãƒ¡ãƒ¼ã‚¸
 			width2D  = (int)((float)width  / glt.scale());
 			height2D = (int)((float)height / glt.scale());
 			glt.create2D( width2D, height2D );
@@ -62,7 +62,7 @@ public class GraphicsTest3 extends _Main {
 			g.setSize( width, height );
 			g.setScale( (float)width / 400.0f );
 
-//			gl.glDisable( GL10.GL_DITHER );	// ƒfƒBƒUˆ—‚ğ–³Œø‰»‚µA‚È‚ß‚ç‚©‚È•\¦‚É
+//			gl.glDisable( GL10.GL_DITHER );	// ãƒ‡ã‚£ã‚¶å‡¦ç†ã‚’ç„¡åŠ¹åŒ–ã—ã€ãªã‚ã‚‰ã‹ãªè¡¨ç¤ºã«
 
 //			gl.glHint( GL10.GL_PERSPECTIVE_CORRECTION_HINT, GL10.GL_FASTEST );	// GL_FASTEST or GL_NICEST
 
@@ -117,7 +117,7 @@ public class GraphicsTest3 extends _Main {
 
 			glt.unlock();
 
-			// •`‰æ‚ÌÛ‚ÌÀ•W“_w’è‚ÌƒeƒXƒg
+			// æç”»ã®éš›ã®åº§æ¨™ç‚¹æŒ‡å®šã®ãƒ†ã‚¹ãƒˆ
 //			g.setOrigin( 20, 50 );
 
 			g.setAlpha( 192 );
@@ -151,8 +151,8 @@ public class GraphicsTest3 extends _Main {
 			g.drawScaledTexture( 0, 270, 90, 75, 75, x, y, 120, 120 );
 			g.setFlipMode( _GLGraphics.FLIP_NONE );
 
-			// _Graphics ƒNƒ‰ƒX‚Ì drawTransTexture() ‚Æˆá‚Á‚ÄA
-			// _GLGraphics ƒNƒ‰ƒX‚Ì drawTransTexture() ‚Í setFlipMode() ‚ª—LŒø‚Å‚·
+			// _Graphics ã‚¯ãƒ©ã‚¹ã® drawTransTexture() ã¨é•ã£ã¦ã€
+			// _GLGraphics ã‚¯ãƒ©ã‚¹ã® drawTransTexture() ã¯ setFlipMode() ãŒæœ‰åŠ¹ã§ã™
 			g.drawTransTexture( 0, 0, 240, x, y, 120, 120, 0, 120, 45, 100, 100 );
 			g.setFlipMode( _GLGraphics.FLIP_HORIZONTAL );
 			g.drawTransTexture( 0, 90, 240, x, y, 120, 120, 0, 120, 45, 100, 100 );
@@ -162,7 +162,7 @@ public class GraphicsTest3 extends _Main {
 			g.drawTransTexture( 0, 270, 240, x, y, 120, 120, 0, 120, 45, 100, 100 );
 			g.setFlipMode( _GLGraphics.FLIP_NONE );
 
-			// Šg‘å—¦‚ğƒ}ƒCƒiƒX’l‚É‚·‚é‚±‚Æ‚Å‚à”½“]‚³‚¹‚é‚±‚Æ‚ª‚Å‚«‚Ü‚·
+			// æ‹¡å¤§ç‡ã‚’ãƒã‚¤ãƒŠã‚¹å€¤ã«ã™ã‚‹ã“ã¨ã§ã‚‚åè»¢ã•ã›ã‚‹ã“ã¨ãŒã§ãã¾ã™
 			g.drawTransTexture( 0, 45, 390, x, y, 120, 120, 60, 60, angle, 150, 100 );
 			g.drawTransTexture( 0, 135, 390, x, y, 120, 120, 60, 60, angle, -100, 150 );
 			g.drawTransTexture( 0, 225, 390, x, y, 120, 120, 60, 60, angle, 150, -100 );
@@ -176,7 +176,7 @@ public class GraphicsTest3 extends _Main {
 
 			g.setAlpha( 255 );
 
-			// 2D•`‰æiƒIƒtƒXƒNƒŠ[ƒ“¨ƒeƒNƒXƒ`ƒƒj
+			// 2Dæç”»ï¼ˆã‚ªãƒ•ã‚¹ã‚¯ãƒªãƒ¼ãƒ³â†’ãƒ†ã‚¯ã‚¹ãƒãƒ£ï¼‰
 			_Graphics g2 = glt.lock2D();
 			g2.setFontSize( 24 );
 			g2.setColor( _Graphics.getColorOfRGB( 0, 0, 0 ) );

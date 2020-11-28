@@ -79,13 +79,13 @@ public class _GLDraw {
 
 		int count = _draw.size();
 
-		// �܂��A�A���t�@���̂Ȃ����̂�`�悷��
+		// まず、アルファ情報のない物体を描画する
 		for( i = 0; i < count; i++ ){
 			tmp = (_GLDrawPrimitive)_draw.get( i );
 			tmp.draw( gl, glt, false );
 		}
 
-		// ���ɁA�A���t�@���̂��镨�̂�`�悷��
+		// 次に、アルファ情報のある物体を描画する
 		for( i = 0; i < count; i++ ){
 			tmp = (_GLDrawPrimitive)_draw.get( i );
 			tmp.draw( gl, glt, true );

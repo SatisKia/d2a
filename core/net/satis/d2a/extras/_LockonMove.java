@@ -10,10 +10,10 @@ public class _LockonMove extends Object {
 	private int[] _move_y;
 	private int _step;
 
-	private float _x, _y;		// Œ»İˆÊ’u
-	private int _tx, _ty;		// –Ú“IˆÊ’u
-	private int _direction;		// •ûŒü
-	private boolean _clockwise;	// 180“x”½‘Î•ûŒü‚¾‚Á‚½ê‡‚ÉŒv‰ñ‚è‚É‰ñ‚·‚©‚Ç‚¤‚©
+	private float _x, _y;		// ç¾åœ¨ä½ç½®
+	private int _tx, _ty;		// ç›®çš„ä½ç½®
+	private int _direction;		// æ–¹å‘
+	private boolean _clockwise;	// 180åº¦åå¯¾æ–¹å‘ã ã£ãŸå ´åˆã«æ™‚è¨ˆå›ã‚Šã«å›ã™ã‹ã©ã†ã‹
 	private boolean _clockwise2;
 
 	private float deg2rad( float angle ){

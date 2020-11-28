@@ -13,7 +13,7 @@ public class GraphicsTest2 extends _Main {
 	public void start(){
 		setCurrent( new MyCanvas() );
 
-		// ƒŠƒ\[ƒX‚©‚çì¬‚·‚é
+		// ãƒªã‚½ãƒ¼ã‚¹ã‹ã‚‰ä½œæˆã™ã‚‹
 		Resources r = getResources();
 		img = _Image.createImage( r, R.drawable.sample );
 
@@ -77,7 +77,7 @@ public class GraphicsTest2 extends _Main {
 			g.drawScaledImage( img, 360, 0, 100, 100, x, y, 120, 120 );
 			g.setFlipMode( _Graphics.FLIP_NONE );
 
-			// drawTransImage() ‚Å‚Í setFlipMode() ‚ªŒø‚©‚È‚¢‚±‚Æ‚ğ¦‚µ‚Ä‚¢‚Ü‚·
+			// drawTransImage() ã§ã¯ setFlipMode() ãŒåŠ¹ã‹ãªã„ã“ã¨ã‚’ç¤ºã—ã¦ã„ã¾ã™
 			g.drawTransImage( img, 0, 160, x, y, 120, 120, 0, 120, 45, 100, 100 );
 			g.setFlipMode( _Graphics.FLIP_HORIZONTAL );
 			g.drawTransImage( img, 120, 160, x, y, 120, 120, 0, 120, 45, 100, 100 );
@@ -89,7 +89,7 @@ public class GraphicsTest2 extends _Main {
 
 			g.drawLine( 0, 160, g.getWidth(), 160 );
 
-			// drawTransImage() ‚Å”½“]‚³‚¹‚é‚É‚ÍAŠg‘å—¦‚ğƒ}ƒCƒiƒX’l‚É‚µ‚Ü‚·
+			// drawTransImage() ã§åè»¢ã•ã›ã‚‹ã«ã¯ã€æ‹¡å¤§ç‡ã‚’ãƒã‚¤ãƒŠã‚¹å€¤ã«ã—ã¾ã™
 			g.drawTransImage( img, 60, 300, x, y, 120, 120, 60, 60, angle, 150, 100 );
 			g.drawTransImage( img, 180, 300, x, y, 120, 120, 60, 60, angle, -100, 150 );
 			g.drawTransImage( img, 300, 300, x, y, 120, 120, 60, 60, angle, 150, -100 );

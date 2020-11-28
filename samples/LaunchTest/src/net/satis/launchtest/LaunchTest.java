@@ -71,7 +71,7 @@ public class LaunchTest extends _Main {
 					args[3] = new String( "" + elapse );
 					launch( "net.satis.launchsub", "LaunchSub", args );
 				} catch( Exception e ){
-					error = "‹N“®‚É¸”s‚µ‚Ü‚µ‚½";
+					error = "èµ·å‹•ã«å¤±æ•—ã—ã¾ã—ãŸ";
 				}
 			}
 		}

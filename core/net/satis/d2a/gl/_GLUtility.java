@@ -17,43 +17,43 @@ public class _GLUtility {
 
 	private GL10 _gl;
 
-	// Šeís—ñ‰‰Z—p
+	// å„ç¨®è¡Œåˆ—æ¼”ç®—ç”¨
 	private float[] util_mat;
 	private float[] tmp_mat;
 
-	// Šeís—ñ‰‰ZŒã‚ÌAOpenGL —ps—ñ‚Ìæ“¾
+	// å„ç¨®è¡Œåˆ—æ¼”ç®—å¾Œã®ã€OpenGL ç”¨è¡Œåˆ—ã®å–å¾—
 	private float[] gl_mat;
 
-	// ‰ñ“]
+	// å›è»¢
 	private float[] _rotate;
 
-	// Šg‘åEk¬
+	// æ‹¡å¤§ãƒ»ç¸®å°
 	private float[] _scale;
 
-	// •½sˆÚ“®
+	// å¹³è¡Œç§»å‹•
 	private float[] _translate;
 
-	// “_‚ÌÀ•W‚ğ•\‚·ƒxƒNƒgƒ‹‚ğ•ÏŠ·s—ñ‚Å•ÏŠ·
+	// ç‚¹ã®åº§æ¨™ã‚’è¡¨ã™ãƒ™ã‚¯ãƒˆãƒ«ã‚’å¤‰æ›è¡Œåˆ—ã§å¤‰æ›
 	private float trans_x;
 	private float trans_y;
 	private float trans_z;
 
-	// ŠOÏ
+	// å¤–ç©
 	private float cross_x;
 	private float cross_y;
 	private float cross_z;
 
-	// ³‹K‰»
+	// æ­£è¦åŒ–
 	private float normalize_x;
 	private float normalize_y;
 	private float normalize_z;
 
-	// ”½Ë
+	// åå°„
 	private float reflect_x;
 	private float reflect_y;
 	private float reflect_z;
 
-	// OŠpŒ`‚ğŒŸõ
+	// ä¸‰è§’å½¢ã‚’æ¤œç´¢
 	private int seek_len;
 	private int[] seek_vertex;
 	private float[] coord_x;
@@ -66,7 +66,7 @@ public class _GLUtility {
 	private float center_y;
 	private float center_z;
 
-	// •Ó‚ÆOŠpŒ`ƒ|ƒŠƒSƒ“‚Æ‚Ì“–‚½‚è”»’è
+	// è¾ºã¨ä¸‰è§’å½¢ãƒãƒªã‚´ãƒ³ã¨ã®å½“ãŸã‚Šåˆ¤å®š
 	private float hit_x;
 	private float hit_y;
 	private float hit_z;
@@ -143,7 +143,7 @@ public class _GLUtility {
 	}
 
 	/*
-	 * Šeís—ñ‰‰ZŒã‚ÌAOpenGL —ps—ñ‚Ìæ“¾
+	 * å„ç¨®è¡Œåˆ—æ¼”ç®—å¾Œã®ã€OpenGL ç”¨è¡Œåˆ—ã®å–å¾—
 	 */
 	public float[] matrix(){
 		int i, j, k;
@@ -157,7 +157,7 @@ public class _GLUtility {
 	}
 
 	/*
-	 * ‹ts—ñ
+	 * é€†è¡Œåˆ—
 	 */
 	public boolean invert(){
 		float det;
@@ -193,7 +193,7 @@ public class _GLUtility {
 	}
 
 	/*
-	 * Ï
+	 * ç©
 	 */
 	public void multiply( float[] matrix ){
 		int i, j, k;
@@ -211,10 +211,10 @@ public class _GLUtility {
 	}
 
 	/*
-	 * ‰ñ“]
+	 * å›è»¢
 	 */
 	public void rotate( float angle, float x, float y, float z ){
-		// ³‹K‰»
+		// æ­£è¦åŒ–
 		float d = (float)Math.sqrt( x * x + y * y + z * z );
 		if( d != 0.0f ){
 			x /= d;
@@ -239,7 +239,7 @@ public class _GLUtility {
 	}
 
 	/*
-	 * Šg‘åEk¬
+	 * æ‹¡å¤§ãƒ»ç¸®å°
 	 */
 	public void scale( float x, float y, float z ){
 		_scale[ 0] = x;
@@ -249,7 +249,7 @@ public class _GLUtility {
 	}
 
 	/*
-	 * ’l‚Ìİ’è
+	 * å€¤ã®è¨­å®š
 	 */
 	public void set( float[] matrix ){
 		for( int i = 0; i < 16; i++ ){
@@ -261,7 +261,7 @@ public class _GLUtility {
 	}
 
 	/*
-	 * ’PˆÊs—ñ
+	 * å˜ä½è¡Œåˆ—
 	 */
 	public void setIdentity(){
 		util_mat[ 0] = 1.0f; util_mat[ 1] = 0.0f; util_mat[ 2] = 0.0f; util_mat[ 3] = 0.0f;
@@ -271,7 +271,7 @@ public class _GLUtility {
 	}
 
 	/*
-	 * •½sˆÚ“®
+	 * å¹³è¡Œç§»å‹•
 	 */
 	public void translate( float x, float y, float z ){
 		_translate[ 3] = x;
@@ -281,7 +281,7 @@ public class _GLUtility {
 	}
 
 	/*
-	 * “]’us—ñ
+	 * è»¢ç½®è¡Œåˆ—
 	 */
 	public void transpose(){
 		int i, j, k;
@@ -295,7 +295,7 @@ public class _GLUtility {
 	}
 
 	/*
-	 * “_‚ÌÀ•W‚ğ•\‚·ƒxƒNƒgƒ‹‚ğ•ÏŠ·s—ñ‚Å•ÏŠ·
+	 * ç‚¹ã®åº§æ¨™ã‚’è¡¨ã™ãƒ™ã‚¯ãƒˆãƒ«ã‚’å¤‰æ›è¡Œåˆ—ã§å¤‰æ›
 	 */
 	public void transVector( float x, float y, float z ){
 		trans_x = util_mat[0] * x + util_mat[1] * y + util_mat[ 2] * z + util_mat[ 3] * 1.0f;
@@ -304,7 +304,7 @@ public class _GLUtility {
 	}
 
 	/*
-	 * ŠOÏ
+	 * å¤–ç©
 	 */
 	public void cross( float x1, float y1, float z1, float x2, float y2, float z2 ){
 		cross_x = y1 * z2 - z1 * y2;
@@ -313,21 +313,21 @@ public class _GLUtility {
 	}
 
 	/*
-	 * “àÏ
+	 * å†…ç©
 	 */
 	public float dot( float x1, float y1, float z1, float x2, float y2, float z2 ){
 		return x1 * x2 + y1 * y2 + z1 * z2;
 	}
 
 	/*
-	 * ‹——£
+	 * è·é›¢
 	 */
 	public float distance( float x, float y, float z ){
 		return (float)Math.sqrt( x * x + y * y + z * z );
 	}
 
 	/*
-	 * ³‹K‰»
+	 * æ­£è¦åŒ–
 	 */
 	public void normalize( float x, float y, float z ){
 		float d = (float)Math.sqrt( x * x + y * y + z * z );
@@ -343,7 +343,7 @@ public class _GLUtility {
 	}
 
 	/*
-	 * ”½Ë
+	 * åå°„
 	 */
 	public void reflect( float vx, float vy, float vz, float nx, float ny, float nz ){
 		float s = dot( -vx, -vy, -vz, nx, ny, nz );
@@ -356,7 +356,7 @@ public class _GLUtility {
 	}
 
 	/*
-	 * OŠpŒ`‚ğŒŸõ
+	 * ä¸‰è§’å½¢ã‚’æ¤œç´¢
 	 */
 	public void beginGetTriangle(){
 		seek_len = 2;
@@ -376,7 +376,7 @@ public class _GLUtility {
 		if( ret ){
 			getTriangleCoord( model, index, trans );
 
-			// OŠpŒ`‚Ì’†S‚ğ‹‚ß‚Ä‚¨‚­
+			// ä¸‰è§’å½¢ã®ä¸­å¿ƒã‚’æ±‚ã‚ã¦ãŠã
 			center_x = (coord_x[0] + coord_x[1] + coord_x[2]) / 3.0f;
 			center_y = (coord_y[0] + coord_y[1] + coord_y[2]) / 3.0f;
 			center_z = (coord_z[0] + coord_z[1] + coord_z[2]) / 3.0f;
@@ -416,7 +416,7 @@ public class _GLUtility {
 				z = trans_z;
 			}
 
-			// …•½‚Ü‚½‚Í‚’¼‚È–Ê‚ÍAOŠpŒ`‚ÌÀ•W‚©‚ç–@ü‚ğ‹‚ß‚é
+			// æ°´å¹³ã¾ãŸã¯å‚ç›´ãªé¢ã¯ã€ä¸‰è§’å½¢ã®åº§æ¨™ã‹ã‚‰æ³•ç·šã‚’æ±‚ã‚ã‚‹
 			cross(
 				coord_x[1] - coord_x[0],
 				coord_y[1] - coord_y[0],
@@ -429,14 +429,14 @@ public class _GLUtility {
 			cross_y = (float)Math.abs( cross_y );
 			cross_z = (float)Math.abs( cross_z );
 
-			// Œë·‚ğl—¶
+			// èª¤å·®ã‚’è€ƒæ…®
 			if( (cross_x < TOLERANCE) || (cross_y < TOLERANCE) || (cross_z < TOLERANCE) ){
 				x = (x < 0.0f) ? -cross_x : cross_x;
 				y = (y < 0.0f) ? -cross_y : cross_y;
 				z = (z < 0.0f) ? -cross_z : cross_z;
 			}
 
-			// ³‹K‰»
+			// æ­£è¦åŒ–
 			normalize( x, y, z );
 			normal_x = normalize_x;
 			normal_y = normalize_y;
@@ -455,10 +455,10 @@ public class _GLUtility {
 	}
 
 	/*
-	 * •Ó‚ÆOŠpŒ`ƒ|ƒŠƒSƒ“‚Æ‚Ì“–‚½‚è”»’è
+	 * è¾ºã¨ä¸‰è§’å½¢ãƒãƒªã‚´ãƒ³ã¨ã®å½“ãŸã‚Šåˆ¤å®š
 	 */
 	public boolean hitCheck( float px, float py, float pz, float qx, float qy, float qz, float[] cx, float[] cy, float[] cz ){
-		// •½–Ê‚Ì•û’ö®‚æ‚è–@üƒxƒNƒgƒ‹‚ğ‹‚ß‚é
+		// å¹³é¢ã®æ–¹ç¨‹å¼ã‚ˆã‚Šæ³•ç·šãƒ™ã‚¯ãƒˆãƒ«ã‚’æ±‚ã‚ã‚‹
 		cross(
 			cx[1] - cx[0],
 			cy[1] - cy[0],
@@ -471,36 +471,36 @@ public class _GLUtility {
 		float ny = cross_y;
 		float nz = cross_z;
 
-		// ’¼ü‚Ì•û’ö®‚æ‚è u ‚ğ‹‚ß‚é
+		// ç›´ç·šã®æ–¹ç¨‹å¼ã‚ˆã‚Š u ã‚’æ±‚ã‚ã‚‹
 		float ux = qx - px;
 		float uy = qy - py;
 		float uz = qz - pz;
 
-		// Œğ“_‚ğ‹‚ß‚é
+		// äº¤ç‚¹ã‚’æ±‚ã‚ã‚‹
 		float top = nx * (cx[0] - px) + ny * (cy[0] - py) + nz * (cz[0] - pz);
 		float bottom = dot( nx, ny, nz, ux, uy, uz );
 
-		// •½s‚Å‚ ‚éê‡A”²‚¯‚é
+		// å¹³è¡Œã§ã‚ã‚‹å ´åˆã€æŠœã‘ã‚‹
 		if( bottom == 0.0f ){
 			return false;
 		}
 
-		// t ‚ğ‹‚ß‚é
+		// t ã‚’æ±‚ã‚ã‚‹
 		float t = top / bottom;
 
-		// 0 <= t <= 1 ˆÈŠO‚Ìê‡AŒğ·‚µ‚Ä‚¢‚È‚¢‚Ì‚Å”²‚¯‚é
+		// 0 <= t <= 1 ä»¥å¤–ã®å ´åˆã€äº¤å·®ã—ã¦ã„ãªã„ã®ã§æŠœã‘ã‚‹
 		if( (t < 0.0f) || (t > 1.0f) ){
 			return false;
 		}
 
-		// –Ê‚Æü‚ÌŒğ“_‚ğ‹‚ß‚é
+		// é¢ã¨ç·šã®äº¤ç‚¹ã‚’æ±‚ã‚ã‚‹
 		hit_x = px + t * ux;
 		hit_y = py + t * uy;
 		hit_z = pz + t * uz;
 
-		// OŠpŒ`“àŠO”»’è
+		// ä¸‰è§’å½¢å†…å¤–åˆ¤å®š
 		for( int i = 0; i < 3; i++ ){
-			// ŠOÏ‚ğ—˜—p‚µ‚Ä“àŠO”»’è
+			// å¤–ç©ã‚’åˆ©ç”¨ã—ã¦å†…å¤–åˆ¤å®š
 			cross(
 				cx[(i == 2) ? 0 : i + 1] - cx[i],
 				cy[(i == 2) ? 0 : i + 1] - cy[i],
@@ -510,13 +510,13 @@ public class _GLUtility {
 				hit_z - cz[i]
 				);
 
-			// ‚·‚×‚Ä‚Ìê‡‚Ì–@ü‚ª“¯ˆê•ûŒü‚È‚ç‚ÎAOŠpƒ|ƒŠƒSƒ““à‚É‘¶İ‚·‚éiŒë·‚ğl—¶j
+			// ã™ã¹ã¦ã®å ´åˆã®æ³•ç·šãŒåŒä¸€æ–¹å‘ãªã‚‰ã°ã€ä¸‰è§’ãƒãƒªã‚´ãƒ³å†…ã«å­˜åœ¨ã™ã‚‹ï¼ˆèª¤å·®ã‚’è€ƒæ…®ï¼‰
 			if( ((cross_x * nx) < TOLERANCE_M) || ((cross_y * ny) < TOLERANCE_M) || ((cross_z * nz) < TOLERANCE_M) ){
 				return false;
 			}
 		}
 
-		return true;	// Œğ“_—L‚è
+		return true;	// äº¤ç‚¹æœ‰ã‚Š
 	}
 
 	/*
@@ -565,8 +565,8 @@ public class _GLUtility {
 		}
 		_gl.glTranslatef( -position_x, -position_y, -position_z );
 
-		// ƒ‚ƒfƒ‹ƒrƒ…[s—ñ‚ğæ“¾
-		// iOpenGL Œ`®‚Ìs—ñ‚ğ _GLUtility Œ`®‚Ìs—ñ‚É•ÏŠ·j
+		// ãƒ¢ãƒ‡ãƒ«ãƒ“ãƒ¥ãƒ¼è¡Œåˆ—ã‚’å–å¾—
+		// ï¼ˆOpenGL å½¢å¼ã®è¡Œåˆ—ã‚’ _GLUtility å½¢å¼ã®è¡Œåˆ—ã«å¤‰æ›ï¼‰
 		int i, j, k;
 		for( j = 0; j < 4; j++ ){
 			k = j * 4;
@@ -598,7 +598,7 @@ public class _GLUtility {
 		_gl.glLoadIdentity();
 		_gl.glFrustumf( l, r, b, t, n, f );
 
-		// Ë‰es—ñ‚ğæ“¾
+		// å°„å½±è¡Œåˆ—ã‚’å–å¾—
 		/******************************************
 		 *   2 n                r + l             *
 		 * -------     0       -------       0    *
@@ -643,7 +643,7 @@ public class _GLUtility {
 	public void viewport( int x, int y, int width, int height ){
 		_gl.glViewport( x, y, width, height );
 
-		// ƒrƒ…[ƒ|[ƒgs—ñ‚ğæ“¾
+		// ãƒ“ãƒ¥ãƒ¼ãƒãƒ¼ãƒˆè¡Œåˆ—ã‚’å–å¾—
 		view_mat[0] = (float)x;
 		view_mat[1] = (float)y;
 		view_mat[2] = (float)width;

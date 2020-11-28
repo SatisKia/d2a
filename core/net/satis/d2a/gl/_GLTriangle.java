@@ -20,7 +20,7 @@ public class _GLTriangle extends Object {
 	public _GLTriangle( _GLUtility glu, _GLModel model, int index ){
 		int i, j;
 
-		// OŠpŒ`‚Ì”‚ğæ“¾‚·‚é
+		// ä¸‰è§’å½¢ã®æ•°ã‚’å–å¾—ã™ã‚‹
 		_num = 0;
 		glu.beginGetTriangle();
 		while( glu.getTriangle( model, index, false ) ){

@@ -20,15 +20,15 @@ public class _Graphics {
 	private RectF _rectf_dst;
 	private Matrix _mat;
 
-	// “§–¾“x
+	// é€æ˜åº¦
 	private int _alpha = 255;
 
-	// ƒ‰ƒXƒ^[ƒIƒyƒŒ[ƒVƒ‡ƒ“
+	// ãƒ©ã‚¹ã‚¿ãƒ¼ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³
 	public static final int ROP_COPY = 0;
 	public static final int ROP_ADD  = 1;
 	private int _rop = ROP_COPY;
 
-	// ƒCƒ[ƒW•`‰æ‚Ì”½“]•û–@
+	// ã‚¤ãƒ¡ãƒ¼ã‚¸æç”»æ™‚ã®åè»¢æ–¹æ³•
 	public static final int FLIP_NONE         = 0;
 	public static final int FLIP_HORIZONTAL   = 1;
 	public static final int FLIP_VERTICAL     = 2;
@@ -37,7 +37,7 @@ public class _Graphics {
 	public static final int FLIP_ROTATE_RIGHT = 5;
 	private int _flipmode = FLIP_NONE;
 
-	// •`‰æ‚ÌÛ‚ÌÀ•WŒ´“_
+	// æç”»ã®éš›ã®åº§æ¨™åŸç‚¹
 	private int _origin_x = 0;
 	private int _origin_y = 0;
 
