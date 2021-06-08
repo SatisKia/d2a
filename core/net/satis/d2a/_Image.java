@@ -11,19 +11,24 @@ import android.graphics.*;
 
 public class _Image extends Object {
 	private Bitmap _bitmap;
+	private boolean _create;
 	private int _width;
 	private int _height;
 	private _Graphics _g = null;
 
+	public _Image( boolean create ){
+		_create = create;
+	}
+
 	public static _Image createImage( Resources res, int id ){
-		_Image img = new _Image();
+		_Image img = new _Image( true );
 		img._bitmap = BitmapFactory.decodeResource( res, id );
 		img._width  = img._bitmap.getWidth();
 		img._height = img._bitmap.getHeight();
 		return img;
 	}
 	public static _Image createImage( int width, int height, boolean use_g ){
-		_Image img = new _Image();
+		_Image img = new _Image( true );
 		img._width  = width;
 		img._height = height;
 		img._bitmap = Bitmap.createBitmap( img._width, img._height, Bitmap.Config.ARGB_8888 );
@@ -37,15 +42,28 @@ public class _Image extends Object {
 		return createImage( width, height, true );
 	}
 
+	public static _Image attachBitmap( Bitmap bitmap ){
+		_Image img = new _Image( false );
+		img._bitmap = bitmap;
+		img._width  = img._bitmap.getWidth();
+		img._height = img._bitmap.getHeight();
+		return img;
+	}
+
 	public void dispose(){
-		_bitmap.recycle();
+		if( _create ) {
+			_bitmap.recycle();
+		}
 	}
 
 	public void mutable( boolean use_g ){
 		if( !(_bitmap.isMutable()) ){
 			Bitmap tmp = _bitmap.copy( Bitmap.Config.ARGB_8888, true );
-			_bitmap.recycle();
+			if( _create ) {
+				_bitmap.recycle();
+			}
 			_bitmap = tmp;
+			_create = true;
 			if( use_g ){
 				_g = new _Graphics( _bitmap );
 			}

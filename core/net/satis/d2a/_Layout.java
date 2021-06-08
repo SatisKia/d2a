@@ -7,7 +7,7 @@ package net.satis.d2a;
 
 import java.util.*;
 
-public class _Layout {
+public class _Layout extends _Scalable {
 	private class MyLayout {
 		public int _left;
 		public int _top;
@@ -107,11 +107,20 @@ public class _Layout {
 		MyLayout tmp;
 		for( int i = _layout.size() - 1; i >= 0; i-- ){
 			tmp = _layout.get( i );
-			if(
-				(x >= tmp._left) && (x < tmp._right ) &&
-				(y >= tmp._top ) && (y < tmp._bottom)
-			){
-				return tmp._id;
+			if( _window ) {
+				if(
+					(x >= tmp._left) && (x < tmp._right ) &&
+					(y >= tmp._top ) && (y < tmp._bottom)
+				){
+					return tmp._id;
+				}
+			} else {
+				if(
+					(x >= scaledValue( tmp._left )) && (x < scaledValue( tmp._right  )) &&
+					(y >= scaledValue( tmp._top  )) && (y < scaledValue( tmp._bottom ))
+				){
+					return tmp._id;
+				}
 			}
 		}
 		return -1;
@@ -121,17 +130,20 @@ public class _Layout {
 		MyLayout tmp;
 		for( int i = _layout.size() - 1; i >= 0; i-- ){
 			tmp = _layout.get(i);
+			int left, top, right, bottom;
 			if( _window ){
-				int left   = canvas.screenX( tmp._left   );
-				int top    = canvas.screenY( tmp._top    );
-				int right  = canvas.screenX( tmp._right  );
-				int bottom = canvas.screenY( tmp._bottom );
-				g.drawRoundRect( left, top, right - left - 1, bottom - top - 1, 16, 16 );
-				g.drawString( "" + tmp._id, left + 5, top + 5 + g.fontHeight() );
+				left   = canvas.screenX( tmp._left   );
+				top    = canvas.screenY( tmp._top    );
+				right  = canvas.screenX( tmp._right  );
+				bottom = canvas.screenY( tmp._bottom );
 			} else {
-				g.drawRoundRect( tmp._left, tmp._top, tmp._right - tmp._left - 1, tmp._bottom - tmp._top - 1, 16, 16 );
-				g.drawString( "" + tmp._id, tmp._left + 5, tmp._top + 5 + g.fontHeight() );
+				left   = scaledValue( tmp._left   );
+				top    = scaledValue( tmp._top    );
+				right  = scaledValue( tmp._right  );
+				bottom = scaledValue( tmp._bottom );
 			}
+			g.drawRect( left, top, right - left - 1, bottom - top - 1 );
+			g.drawString( "" + tmp._id, left + 5, top + 5 + g.fontHeight() );
 		}
 	}
 }

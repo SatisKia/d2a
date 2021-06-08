@@ -63,6 +63,9 @@ public class _ScalableGraphics extends _Scalable {
 	public void unlock(){
 		_g.unlock();
 	}
+	public _Graphics getGraphics(){
+		return _g;
+	}
 	public Canvas getCanvas(){
 		return _g.getCanvas();
 	}

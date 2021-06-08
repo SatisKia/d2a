@@ -7,13 +7,15 @@ package net.satis.d2a;
 
 import java.io.InputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class _HttpRequest {
-	private _Main _m;
+	private _Main _m = null;
+	private _State _state = null;
 	private int _timeout = 0;	// タイムアウトミリ秒（0で無限）
 	private boolean _busy = false;
 
@@ -22,6 +24,9 @@ public class _HttpRequest {
 
 	public _HttpRequest( _Main m ){
 		_m = m;
+	}
+	public _HttpRequest( _State state ){
+		_state = state;
 	}
 
 	public void setTimeout( int timeout ){
@@ -54,7 +59,12 @@ public class _HttpRequest {
 						try {
 							is = conn.getInputStream();
 						} catch( Exception e ){}
-						_m.onHttpResponse( is );
+						if( _m != null ) {
+							_m.onHttpResponse( is );
+						}
+						if( _state != null ) {
+							_state.onHttpResponse( is );
+						}
 						if( is != null ){
 							try {
 								is.close();
@@ -62,10 +72,30 @@ public class _HttpRequest {
 							is = null;
 						}
 					} else {
-						_m.onHttpError( response );
+						InputStream is = null;
+						try {
+							is = conn.getErrorStream();
+						} catch( Exception e ){}
+						if( _m != null ) {
+							_m.onHttpError( response, is );
+						}
+						if( _state != null ) {
+							_state.onHttpError( response, is );
+						}
+						if( is != null ){
+							try {
+								is.close();
+							} catch( Exception e ){}
+							is = null;
+						}
 					}
 				} catch( IOException e ){
-					_m.onHttpError( IO_ERROR );
+					if( _m != null ) {
+						_m.onHttpError( IO_ERROR, null );
+					}
+					if( _state != null ) {
+						_state.onHttpError( IO_ERROR, null );
+					}
 				} finally {
 					if( conn != null ){
 						conn.disconnect();
@@ -95,6 +125,7 @@ public class _HttpRequest {
 					conn.setUseCaches( false );			// キャッシュ利用
 					conn.setDoOutput( true );			// リクエストのボディの送信を許可（POST時はtrue）
 					conn.setDoInput( true );			// レスポンスのボディの受信を許可
+					conn.setRequestProperty( "Content-Type", "application/json;charset=" + encoding );
 
 					OutputStream out = conn.getOutputStream();
 					final boolean autoFlash = true;
@@ -108,7 +139,12 @@ public class _HttpRequest {
 						try {
 							is = conn.getInputStream();
 						} catch( Exception e ){}
-						_m.onHttpResponse( is );
+						if( _m != null ) {
+							_m.onHttpResponse( is );
+						}
+						if( _state != null ) {
+							_state.onHttpResponse( is );
+						}
 						if( is != null ){
 							try {
 								is.close();
@@ -116,11 +152,31 @@ public class _HttpRequest {
 							is = null;
 						}
 					} else {
-						_m.onHttpError( response );
+						InputStream is = null;
+						try {
+							is = conn.getErrorStream();
+						} catch( Exception e ){}
+						if( _m != null ) {
+							_m.onHttpError( response, is );
+						}
+						if( _state != null ) {
+							_state.onHttpError( response, is );
+						}
+						if( is != null ){
+							try {
+								is.close();
+							} catch( Exception e ){}
+							is = null;
+						}
 					}
 
 				} catch( IOException e ){
-					_m.onHttpError( IO_ERROR );
+					if( _m != null ) {
+						_m.onHttpError( IO_ERROR, null );
+					}
+					if( _state != null ) {
+						_state.onHttpError( IO_ERROR, null );
+					}
 				} finally {
 					if( conn != null ){
 						conn.disconnect();
@@ -135,5 +191,22 @@ public class _HttpRequest {
 
 	public boolean busy(){
 		return _busy;
+	}
+
+	public static String responseString( InputStream is ){
+		String str = new String( "" );
+		if( is != null ){
+			try {
+				InputStreamReader reader = new InputStreamReader( is );
+				StringBuilder builder = new StringBuilder();
+				char[] buf = new char[1024];
+				int len;
+				while( (len = reader.read( buf )) > 0 ){
+					builder.append( buf, 0, len );
+				}
+				str = builder.toString();
+			} catch( Exception e ){}
+		}
+		return str;
 	}
 }

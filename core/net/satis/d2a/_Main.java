@@ -203,7 +203,7 @@ public class _Main extends AppCompatActivity {
 
 	// _HttpRequest クラス用
 	public void onHttpResponse( InputStream is ){}
-	public void onHttpError( int status ){}
+	public void onHttpError( int status, InputStream is ){}
 
 	// _Music クラス用
 	public int volumeMusic(){ return 100; }
