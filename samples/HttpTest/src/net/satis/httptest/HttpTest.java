@@ -1,7 +1,6 @@
 package net.satis.httptest;
 
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import net.satis.d2a.*;
 
 public class HttpTest extends _Main {
@@ -31,16 +30,7 @@ public class HttpTest extends _Main {
 	public void onHttpResponse( InputStream is ){
 		str2 = "";
 		if( is != null ){
-			try {
-				InputStreamReader reader = new InputStreamReader( is );
-				StringBuilder builder = new StringBuilder();
-				char[] buf = new char[1024];
-				int len;
-				while( (len = reader.read( buf )) > 0 ){
-					builder.append( buf, 0, len );
-				}
-				str2 = builder.toString();
-			} catch( Exception e ){}
+			str2 = _HttpRequest.responseString( is );
 		}
 	}
 
@@ -114,12 +104,7 @@ public class HttpTest extends _Main {
 					break;
 				case 1:
 					str1 = "test2.php";
-					{
-						String[] vars = new String[2];
-						vars[0] = new String( "user" );
-						vars[1] = new String( "guest" );
-						http.post( server + str1, vars, "UTF-8" );
-					}
+					http.post( server + str1, "{\"user\":\"guest\"}", "UTF-8" );
 					step = 2;
 					break;
 				case 2:
@@ -129,12 +114,7 @@ public class HttpTest extends _Main {
 					break;
 				case 3:
 					str1 = "test4.php";
-					{
-						String[] vars = new String[2];
-						vars[0] = new String( "user" );
-						vars[1] = new String( "guest" );
-						http.post( server + str1, vars, "UTF-8" );
-					}
+					http.post( server + str1, "{\"user\":\"guest\"}", "UTF-8" );
 					step = 0;
 					break;
 				}

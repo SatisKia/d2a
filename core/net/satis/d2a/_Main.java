@@ -47,6 +47,10 @@ public class _Main extends AppCompatActivity {
 			getWindow().addFlags( WindowManager.LayoutParams.FLAG_FULLSCREEN );
 		}
 
+		if( hideNavigation() ){
+			getWindow().getDecorView().setSystemUiVisibility( View.SYSTEM_UI_FLAG_HIDE_NAVIGATION );
+		}
+
 		requestWindowFeature( Window.FEATURE_NO_TITLE );
 
 		// オーディオ関連
@@ -54,6 +58,16 @@ public class _Main extends AppCompatActivity {
 		_audio = (AudioManager)getSystemService( Context.AUDIO_SERVICE );
 
 		start();
+	}
+
+	@Override
+	public void onWindowFocusChanged( boolean hasFocus ){
+		super.onWindowFocusChanged( hasFocus );
+		if( hasFocus ){
+			if( hideNavigation() ){
+				getWindow().getDecorView().setSystemUiVisibility( View.SYSTEM_UI_FLAG_HIDE_NAVIGATION );
+			}
+		}
 	}
 
 	@Override
@@ -190,6 +204,7 @@ public class _Main extends AppCompatActivity {
 
 	public int orientation(){ return ORIENTATION_NOSENSOR; }
 	public boolean fullScreen(){ return false; }
+	public boolean hideNavigation(){ return false; }
 	public boolean enableSilentMode(){ return false; }
 
 	public void start(){}
