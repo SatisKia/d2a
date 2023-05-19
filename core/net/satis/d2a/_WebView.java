@@ -7,6 +7,7 @@ package net.satis.d2a;
 
 import java.io.File;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -88,14 +89,15 @@ public class _WebView extends WebViewClient {
 		_view.getSettings().setLoadWithOverviewMode( true );
 	}
 
-	public void addJavascriptInterface( Object object, String name ){
+	@SuppressLint("JavascriptInterface")
+	public void addJavascriptInterface(Object object, String name ){
 		// Android 4.2（API level 17）以降
 		if( Build.VERSION.SDK_INT >= 17 ){
 			_view.addJavascriptInterface( object, name );
 		}
 	}
 	public void setAppCacheEnabled( boolean enabled ){
-		_view.getSettings().setAppCacheEnabled( enabled );
+		_view.getSettings().setCacheMode( enabled ? WebSettings.LOAD_DEFAULT : WebSettings.LOAD_NO_CACHE );
 	}
 	public void setBackgroundColor( int color ){
 		_view.setBackgroundColor( color );
