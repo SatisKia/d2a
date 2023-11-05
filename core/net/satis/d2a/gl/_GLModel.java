@@ -115,7 +115,8 @@ public class _GLModel extends _GLPrimitive {
 		}
 
 		if( _strip_coord[index] >= 0 ){
-			gl.glEnableClientState( GL10.GL_VERTEX_ARRAY );{
+			gl.glEnableClientState( GL10.GL_VERTEX_ARRAY );
+			{
 				FloatBuffer coord_buffer;
 				ByteBuffer byteBuffer = ByteBuffer.allocateDirect( _coord[_strip_coord[index]].length * 4 );
 				byteBuffer.order( ByteOrder.nativeOrder() );
@@ -129,7 +130,8 @@ public class _GLModel extends _GLPrimitive {
 		}
 
 		if( (_normal != null) && (_strip_normal[index] >= 0) ){
-			gl.glEnableClientState( GL10.GL_NORMAL_ARRAY );{
+			gl.glEnableClientState( GL10.GL_NORMAL_ARRAY );
+			{
 				FloatBuffer normal_buffer;
 				ByteBuffer byteBuffer = ByteBuffer.allocateDirect( _normal[_strip_normal[index]].length * 4 );
 				byteBuffer.order( ByteOrder.nativeOrder() );
@@ -143,7 +145,8 @@ public class _GLModel extends _GLPrimitive {
 		}
 
 		if( (_color != null) && (_strip_color[index] >= 0) ){
-			gl.glEnableClientState( GL10.GL_COLOR_ARRAY );{
+			gl.glEnableClientState( GL10.GL_COLOR_ARRAY );
+			{
 				FloatBuffer color_buffer;
 				ByteBuffer byteBuffer = ByteBuffer.allocateDirect( _color[_strip_color[index]].length * 4 );
 				byteBuffer.order( ByteOrder.nativeOrder() );
@@ -163,7 +166,8 @@ public class _GLModel extends _GLPrimitive {
 			if( (_map != null) && (_strip_map[index] >= 0) && (tex_index >= 0) ){
 				gl.glEnableClientState( GL10.GL_TEXTURE_COORD_ARRAY );
 				gl.glEnable( GL10.GL_TEXTURE_2D );
-				gl.glBindTexture( GL10.GL_TEXTURE_2D, glt.id( tex_index ) );{
+				gl.glBindTexture( GL10.GL_TEXTURE_2D, glt.id( tex_index ) );
+				{
 					FloatBuffer map_buffer;
 					ByteBuffer byteBuffer = ByteBuffer.allocateDirect( _map[_strip_map[index]].length * 4 );
 					byteBuffer.order( ByteOrder.nativeOrder() );
@@ -205,7 +209,8 @@ public class _GLModel extends _GLPrimitive {
 
 		gl.glPushMatrix();
 
-		if( beginDraw( gl, glt, index, tex_index, mat ) ){{
+		if( beginDraw( gl, glt, index, tex_index, mat ) ){
+			{
 				ShortBuffer strip_buffer;
 				ByteBuffer byteBuffer = ByteBuffer.allocateDirect( _strip[index].length * 2 );
 				byteBuffer.order( ByteOrder.nativeOrder() );
